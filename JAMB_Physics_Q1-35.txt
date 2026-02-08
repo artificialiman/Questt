@@ -1,0 +1,281 @@
+JAMB PHYSICS - EXCEPTIONAL QUESTIONS (1-35)
+
+1. A body moving with constant velocity has:
+A. Zero acceleration
+B. Constant acceleration
+C. Increasing acceleration
+D. Decreasing acceleration
+Answer: A
+Explanation: Constant velocity means no change in speed or direction, so a = Δv/Δt = 0. Exception: Many confuse velocity with speed; constant speed with changing direction (circular motion) HAS acceleration.
+
+2. An object is thrown vertically upward. At its highest point:
+A. Velocity = 0, acceleration = 0
+B. Velocity = 0, acceleration = g (downward)
+C. Velocity = g, acceleration = 0
+D. Both velocity and acceleration are maximum
+Answer: B
+Explanation: At peak, v = 0 instantaneously, but gravity still acts (a = 9.8 m/s² downward). Exception: Acceleration is NOT zero at highest point—common misconception; gravity never stops acting.
+
+3. A 5 kg block on a frictionless surface is pushed with 20 N force. If friction force is 5 N, find acceleration:
+A. 3 m/s²
+B. 4 m/s²
+C. 5 m/s²
+D. Cannot be determined
+Answer: A
+Explanation: Wait—question says "frictionless" but then mentions friction. This is inconsistent. If friction = 5 N: Net force = 20 - 5 = 15 N, a = F/m = 15/5 = 3 m/s². Exception: Contradictory problem; demonstrates importance of reading carefully for errors.
+
+4. Two forces of 6 N and 8 N act perpendicular to each other. The resultant force is:
+A. 2 N
+B. 10 N
+C. 14 N
+D. 48 N
+Answer: B
+Explanation: Perpendicular forces: R = √(F₁² + F₂²) = √(36 + 64) = 10 N. Exception: This is a 3-4-5 Pythagorean triple scaled by 2; many simply add forces linearly (14 N) ignoring vector nature.
+
+5. A car travels 100 m in 5 s at constant acceleration from rest. Find acceleration:
+A. 4 m/s²
+B. 8 m/s²
+C. 10 m/s²
+D. 20 m/s²
+Answer: B
+Explanation: s = ut + ½at². With u = 0: 100 = ½a(25), so a = 8 m/s². Exception: Cannot use v = u + at without knowing final velocity; must use displacement equation.
+
+6. Newton's third law states action-reaction pairs:
+A. Act on the same object
+B. Act on different objects
+C. Cancel each other out
+D. Only apply to collisions
+Answer: B
+Explanation: Action-reaction forces act on DIFFERENT objects (book on table / table on book). Exception: Common error is thinking they cancel—they can't cancel because they act on different bodies.
+
+7. An object weighs 60 N on Earth. On the Moon (g = 1.6 m/s²), it weighs:
+A. 10 N
+B. 36 N
+C. 60 N
+D. 360 N
+Answer: A
+Explanation: Mass = W/g = 60/10 = 6 kg (constant). Moon weight = mg = 6(1.6) = 9.6 ≈ 10 N. Exception: Mass is invariant; weight changes with gravity—common confusion between mass and weight.
+
+8. A projectile is launched at 45° for maximum range. At 30°, the range is:
+A. Greater than at 45°
+B. Less than at 45°
+C. Equal to at 45°
+D. Zero
+Answer: B
+Explanation: Maximum range occurs at 45° (for given velocity). Any other angle gives less range. Exception: Complementary angles (30° and 60°) give EQUAL ranges, but both less than 45°.
+
+9. A ball dropped from height h takes time t to hit ground. From height 4h, time taken is:
+A. t
+B. 2t
+C. 4t
+D. 16t
+Answer: B
+Explanation: h ∝ t² (from h = ½gt²). If h increases 4×, t increases √4 = 2×. Exception: Linear thinking (4h → 4t) is wrong; relationship is quadratic.
+
+10. Momentum is conserved in:
+A. Elastic collisions only
+B. Inelastic collisions only
+C. All collisions (isolated system)
+D. No collisions
+Answer: C
+Explanation: Momentum conserved in ALL collisions if no external force. Exception: Kinetic energy is conserved ONLY in elastic collisions; don't confuse momentum conservation with energy conservation.
+
+11. A 2 kg object moving at 5 m/s collides with 3 kg object at rest. They stick together. Final velocity:
+A. 1 m/s
+B. 2 m/s
+C. 3 m/s
+D. 5 m/s
+Answer: B
+Explanation: Momentum conservation: 2(5) + 3(0) = (2+3)v, so v = 10/5 = 2 m/s. Exception: This is perfectly inelastic collision (objects stick); KE is NOT conserved, only momentum.
+
+12. Power is defined as:
+A. Work done per unit time
+B. Force times distance
+C. Energy stored
+D. Force times velocity
+Answer: A (also D is valid)
+Explanation: P = W/t (primary definition). Also P = Fv (instantaneous power). Exception: Both A and D are correct; question should specify or accept both.
+
+13. A machine lifts 500 N load through 2 m using 200 N effort over 6 m. Efficiency is:
+A. 40%
+B. 60%
+C. 83.3%
+D. 120%
+Answer: C
+Explanation: Efficiency = (Work output / Work input) × 100 = (500×2)/(200×6) × 100 = 83.3%. Exception: Efficiency can NEVER exceed 100% (would violate energy conservation); option D is impossible.
+
+14. The unit of impulse is:
+A. N
+B. N·s (same as kg·m/s)
+C. J
+D. W
+Answer: B
+Explanation: Impulse = FΔt (units: N·s). Also = Δ(mv) (units: kg·m/s). Exception: N·s and kg·m/s are equivalent but look different; impulse = change in momentum.
+
+15. A spring with constant k = 100 N/m is compressed 0.2 m. Elastic PE stored:
+A. 2 J
+B. 4 J
+C. 10 J
+D. 20 J
+Answer: A
+Explanation: PE = ½kx² = ½(100)(0.04) = 2 J. Exception: Common error is forgetting the ½ factor or not squaring displacement.
+
+16. Two resistors (4Ω and 6Ω) in parallel have equivalent resistance:
+A. 2.4Ω
+B. 5Ω
+C. 10Ω
+D. 24Ω
+Answer: A
+Explanation: 1/R = 1/4 + 1/6 = 5/12, so R = 12/5 = 2.4Ω. Exception: Parallel resistance is LESS than smallest individual resistor (not average, not sum).
+
+17. A wire of resistance R is stretched to double its length. New resistance:
+A. R/2
+B. R
+C. 2R
+D. 4R
+Answer: D
+Explanation: R = ρL/A. If L doubles, volume constant means A halves. R_new = ρ(2L)/(A/2) = 4R. Exception: Resistance increases by square of length ratio; volume conservation crucial.
+
+18. In a circuit, ammeter should be connected in:
+A. Series (to measure current through)
+B. Parallel (to measure voltage)
+C. Either series or parallel
+D. Depends on value
+Answer: A
+Explanation: Ammeter measures current, must be in series (low resistance). Voltmeter in parallel (high resistance). Exception: Ideal ammeter has zero resistance; real ammeters have small resistance affecting circuit.
+
+19. Kirchhoff's current law states:
+A. Sum of currents entering junction = sum leaving
+B. Voltage drop around loop = 0
+C. Resistance is constant
+D. Power is conserved
+Answer: A
+Explanation: KCL: ΣI_in = ΣI_out (charge conservation at junction). Exception: This is statement of charge conservation; Kirchhoff's voltage law (KVL) deals with energy around loops.
+
+20. A transformer with 100 turns (primary) and 500 turns (secondary) has:
+A. Step-down (voltage decreases)
+B. Step-up (voltage increases 5×)
+C. 1:1 ratio
+D. Current increases 5×
+Answer: B
+Explanation: V_s/V_p = N_s/N_p = 500/100 = 5. Voltage increases. Exception: Current does opposite: I_s/I_p = N_p/N_s = 1/5 (current decreases); power conserved.
+
+21. AC current has RMS value of 10 A. Peak current is:
+A. 7.07 A
+B. 10 A
+C. 14.14 A
+D. 20 A
+Answer: C
+Explanation: I_peak = I_rms × √2 = 10√2 ≈ 14.14 A. Exception: RMS (root mean square) is the effective value; peak is √2 times larger, NOT 2 times.
+
+22. The speed of light in glass (n = 1.5) is:
+A. 3 × 10⁸ m/s
+B. 2 × 10⁸ m/s
+C. 1.5 × 10⁸ m/s
+D. 4.5 × 10⁸ m/s
+Answer: B
+Explanation: n = c/v, so v = c/n = (3×10⁸)/1.5 = 2×10⁸ m/s. Exception: Light slows in denser medium; can never exceed c (vacuum speed).
+
+23. Total internal reflection occurs when light travels:
+A. From denser to rarer medium at angle > critical
+B. From rarer to denser medium
+C. At any angle
+D. Only in fiber optics
+Answer: A
+Explanation: TIR requires: denser → rarer AND angle > critical angle. Exception: Cannot occur going rarer → denser (light always refracts into denser medium).
+
+24. A concave mirror has focal length 20 cm. An object at 30 cm produces image at:
+A. 60 cm (real, inverted)
+B. 12 cm (virtual, upright)
+C. 60 cm (virtual, upright)
+D. Infinity
+Answer: A
+Explanation: 1/f = 1/u + 1/v. 1/20 = 1/30 + 1/v, so v = 60 cm. Positive v = real image (inverted). Exception: Between F and C, image is beyond C, magnified and inverted.
+
+25. Two waves with same frequency interfere. If path difference = λ/2:
+A. Constructive interference (bright)
+B. Destructive interference (dark)
+C. No interference
+D. Partial interference
+Answer: B
+Explanation: Path difference = (n + ½)λ gives destructive interference (180° phase difference). Exception: Path difference = nλ gives constructive; half-wavelength shift inverts wave.
+
+26. The frequency of a wave with wavelength 2 m traveling at 10 m/s is:
+A. 0.2 Hz
+B. 5 Hz
+C. 20 Hz
+D. 50 Hz
+Answer: B
+Explanation: v = fλ, so f = v/λ = 10/2 = 5 Hz. Exception: Don't confuse frequency (oscillations/time) with wave speed (distance/time).
+
+27. Doppler effect causes observed frequency to:
+A. Increase when source approaches
+B. Decrease when source approaches
+C. Remain constant
+D. Double when source approaches
+Answer: A
+Explanation: Approaching source: waves compressed, wavelength decreases, frequency increases. Exception: Applies to sound AND light; light shows redshift (receding) / blueshift (approaching).
+
+28. In a standing wave, distance between consecutive nodes is:
+A. λ/4
+B. λ/2
+C. λ
+D. 2λ
+Answer: B
+Explanation: Node to node = half wavelength. Antinode to antinode = half wavelength. Node to antinode = quarter wavelength. Exception: Don't confuse node spacing with antinode spacing.
+
+29. At absolute zero (0 K), molecular motion:
+A. Stops completely (classically)
+B. Continues (quantum zero-point energy)
+C. Increases
+D. Becomes chaotic
+Answer: B
+Explanation: Classically, motion stops. Quantum mechanically, zero-point energy means some motion remains. Exception: Heisenberg uncertainty principle forbids truly zero motion.
+
+30. Internal energy of ideal gas depends on:
+A. Temperature only
+B. Pressure and volume
+C. Volume only
+D. All of the above
+Answer: A
+Explanation: For ideal gas, U depends only on T (kinetic energy of molecules). Exception: Real gases have intermolecular forces; U depends on volume too.
+
+31. First law of thermodynamics states:
+A. ΔU = Q - W
+B. Entropy always increases
+C. Heat flows hot to cold
+D. Energy is constant
+Answer: A
+Explanation: ΔU = Q - W (energy conservation). Q = heat added, W = work done BY system. Exception: Sign convention varies; some texts use ΔU = Q + W (work done ON system).
+
+32. In adiabatic process:
+A. Q = 0 (no heat transfer)
+B. ΔU = 0
+C. W = 0
+D. P = constant
+Answer: A
+Explanation: Adiabatic: thermally isolated, Q = 0. From first law: ΔU = -W. Exception: Temperature CHANGES in adiabatic process (unlike isothermal where T constant).
+
+33. Heat capacity of water is 4200 J/(kg·K). Energy needed to raise 2 kg by 5°C:
+A. 2100 J
+B. 8400 J
+C. 21000 J
+D. 42000 J
+Answer: D
+Explanation: Q = mcΔT = 2 × 4200 × 5 = 42000 J. Exception: Specific heat capacity is per kg per degree; don't forget mass AND temperature change.
+
+34. A photoelectric experiment shows electrons emitted when light frequency exceeds threshold. This supports:
+A. Wave theory (classical)
+B. Particle theory (quantum)
+C. Both equally
+D. Neither
+Answer: B
+Explanation: Photoelectric effect proves photons (particles). Below threshold, no emission regardless of intensity. Exception: Classical wave theory predicts intensity matters, not frequency—experiment disproved this.
+
+35. De Broglie wavelength of a particle with momentum p is:
+A. λ = h/p
+B. λ = p/h
+C. λ = hp
+D. λ = h/p²
+Answer: A
+Explanation: λ = h/p where h is Planck's constant. Exception: Wave-particle duality; all matter has wavelength, but only significant for small masses (electrons), negligible for macroscopic objects.

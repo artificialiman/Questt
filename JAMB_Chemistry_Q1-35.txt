@@ -1,0 +1,281 @@
+JAMB CHEMISTRY - EXCEPTIONAL QUESTIONS (1-35)
+
+1. An element X has atomic number 17 and mass number 35. The number of neutrons is:
+A. 17
+B. 18
+C. 35
+D. 52
+Answer: B
+Explanation: Neutrons = mass number - atomic number = 35 - 17 = 18. Exception: Isotopes of same element have different neutron counts but same atomic number (proton count defines element).
+
+2. Which electronic configuration violates Hund's rule?
+A. 1s² 2s² 2p⁶
+B. 1s² 2s² 2p⁴ (↑↓ ↑ ↑)
+C. 1s² 2s² 2p⁴ (↑↓ ↑↓ ↑)
+D. 1s² 2s² 2p³ (↑ ↑ ↑)
+Answer: C
+Explanation: Hund's rule: electrons singly occupy orbitals before pairing. Option C pairs prematurely. Exception: Maximum multiplicity (unpaired electrons) gives lowest energy—pairing increases electron-electron repulsion.
+
+3. The ion with electronic configuration 1s² 2s² 2p⁶ could be:
+A. Na⁺ only
+B. F⁻ only
+C. Both Na⁺ and F⁻
+D. Neither
+Answer: C
+Explanation: Both have 10 electrons (isoelectronic with Ne). Na loses 1e⁻, F gains 1e⁻. Exception: Isoelectronic species have same electron count but different nuclear charges—different sizes and properties.
+
+4. Electronegativity increases across a period because:
+A. Nuclear charge increases, atomic radius decreases
+B. Shielding increases
+C. Atomic radius increases
+D. Ionization energy decreases
+Answer: A
+Explanation: More protons pull electrons stronger; smaller size means closer to nucleus. Exception: Noble gases often excluded from electronegativity trends (don't form bonds readily).
+
+5. The first ionization energy of magnesium is lower than sodium because:
+A. This statement is FALSE (Na < Mg)
+B. Mg has more shielding
+C. Mg has larger radius
+D. Mg is a metal
+Answer: A
+Explanation: IE generally increases across period. Mg > Na. Question is trick/exception test. Exception: Actual exceptions in trend: Al < Mg (subshell), O < N (pairing energy).
+
+6. Noble gases are unreactive because:
+A. Full valence shell (stable octet)
+B. High electronegativity
+C. Large atomic radius
+D. Low ionization energy
+Answer: A
+Explanation: ns²np⁶ configuration is stable. Exception: Xe and Kr CAN form compounds (XeF₄, KrF₂) with highly electronegative F—"inert" is misnomer for heavier noble gases.
+
+7. The bond angle in water (104.5°) is less than methane (109.5°) because:
+A. Lone pairs repel more than bonding pairs
+B. Oxygen is more electronegative
+C. Hydrogen bonding
+D. Water is polar
+Answer: A
+Explanation: VSEPR: lone pair-lone pair > lone pair-bond > bond-bond repulsion. 2 lone pairs compress bond angle. Exception: NH₃ (107°) also compressed from tetrahedral but less than H₂O (more lone pairs = more compression).
+
+8. Which molecule is nonpolar despite having polar bonds?
+A. CO₂ (linear, symmetrical)
+B. H₂O
+C. NH₃
+D. HCl
+Answer: A
+Explanation: CO₂: two C=O bonds cancel (linear geometry). Exception: Molecular shape determines polarity; CCl₄ also nonpolar (tetrahedral symmetry) despite polar C-Cl bonds.
+
+9. The hybridization of carbon in CO₂ is:
+A. sp
+B. sp²
+C. sp³
+D. sp³d
+Answer: A
+Explanation: Linear geometry = sp hybridization (2 regions of electron density). Exception: Same carbon can have different hybridizations: CH₄ (sp³), C₂H₄ (sp²), C₂H₂ (sp).
+
+10. Resonance structures of benzene show:
+A. Electrons are delocalized (not fixed double bonds)
+B. Molecule oscillates between structures
+C. Double bonds alternate rapidly
+D. Two different compounds exist
+Answer: A
+Explanation: Resonance = single structure with delocalized electrons, NOT equilibrium between forms. Exception: Common misconception is that molecule "flips" between structures; actual structure is hybrid.
+
+11. Hydrogen bonding is strongest between:
+A. F-H···F (most electronegative)
+B. O-H···O
+C. N-H···N
+D. C-H···O
+Answer: A
+Explanation: Strength: F-H > O-H > N-H (electronegativity trend). Exception: O-H bonds in water are more common/biologically important despite F-H being stronger.
+
+12. The pH of 0.01 M HCl is:
+A. 2
+B. 1
+C. 0.01
+D. 12
+Answer: A
+Explanation: pH = -log[H⁺] = -log(10⁻²) = 2. Exception: Very concentrated acids (>1M) can have negative pH; very dilute bases can exceed pH 14.
+
+13. A buffer solution resists pH change because:
+A. Contains weak acid and its conjugate base
+B. Contains strong acid
+C. Is neutral
+D. Has high concentration
+Answer: A
+Explanation: Buffer: HA/A⁻ pair. Absorbs added H⁺ or OH⁻. Exception: Buffers only effective within ±1 pH unit of pKa; outside this range, buffering capacity fails.
+
+14. The pH at equivalence point in strong acid-strong base titration is:
+A. 7
+B. <7
+C. >7
+D. Depends on concentrations
+Answer: A
+Explanation: Neutral salt formed (NaCl from HCl + NaOH). Exception: Weak acid-strong base gives pH >7; strong acid-weak base gives pH <7 at equivalence point.
+
+15. Kw = [H⁺][OH⁻] = 10⁻¹⁴ at 25°C. At higher temperature, Kw:
+A. Increases (ionization is endothermic)
+B. Decreases
+C. Stays constant
+D. Becomes zero
+Answer: A
+Explanation: Water ionization is endothermic; Le Chatelier predicts increase with temperature. Exception: Neutral pH at 60°C is ~6.5 (not 7) because Kw increases.
+
+16. The oxidation number of Cr in K₂Cr₂O₇ is:
+A. +6
+B. +7
+C. +12
+D. +14
+Answer: A
+Explanation: 2(+1) + 2x + 7(-2) = 0, so x = +6. Exception: Maximum oxidation state usually equals group number; Cr in Group 6 can reach +6.
+
+17. In the reaction 2Fe²⁺ → 2Fe³⁺ + 2e⁻, iron is:
+A. Oxidized (loses electrons)
+B. Reduced
+C. Oxidizing agent
+D. Unchanged
+Answer: A
+Explanation: Oxidation = loss of electrons (OIL RIG). Fe²⁺ is reducing agent. Exception: "Oxidized" doesn't require oxygen; originally meant combining with oxygen, now means electron loss.
+
+18. The standard hydrogen electrode is assigned:
+A. E° = 0.00 V (reference point)
+B. E° = 1.00 V
+C. E° = -1.00 V
+D. E° = +0.76 V
+Answer: A
+Explanation: SHE is reference; all other potentials measured relative to it. Exception: Arbitrary choice; could have chosen any value, but 0 V is convenient.
+
+19. In galvanic cell, the anode is:
+A. Negative electrode (oxidation occurs)
+B. Positive electrode
+C. Where reduction occurs
+D. Made of copper
+Answer: A
+Explanation: Anode = oxidation = negative in galvanic cell. Exception: In electrolytic cell, anode is POSITIVE (but still oxidation site)—confusion point.
+
+20. Faraday's law: mass deposited is proportional to:
+A. Charge passed (Q = nF)
+B. Current only
+C. Voltage
+D. Resistance
+Answer: A
+Explanation: m ∝ Q. Specifically: m = (Q × M)/(n × F). Exception: Time matters through Q = It; doubling current OR doubling time doubles mass.
+
+21. Haber process produces ammonia at:
+A. High pressure, moderate temperature, Fe catalyst
+B. Low pressure, high temperature
+C. Room conditions
+D. High temperature only
+Answer: A
+Explanation: N₂ + 3H₂ ⇌ 2NH₃ (exothermic, Δn < 0). Le Chatelier: high P favors products, low T favors products but slows reaction—compromise at 450°C. Exception: Equilibrium position vs rate conflict requires optimization.
+
+22. In N₂ + 3H₂ ⇌ 2NH₃, adding more N₂:
+A. Shifts equilibrium right (more NH₃)
+B. Shifts left
+C. No effect on equilibrium
+D. Stops reaction
+Answer: A
+Explanation: Le Chatelier: system counteracts change by consuming added N₂. Exception: Kp unchanged; only position shifts, not equilibrium constant.
+
+23. The equilibrium constant Kc for 2A ⇌ B is 4. For B ⇌ 2A, Kc is:
+A. 0.25 (1/4)
+B. 4
+C. 16
+D. 2
+Answer: A
+Explanation: Reversing reaction inverts K: K_reverse = 1/K_forward. Exception: Multiplying equation by n raises K to power n; reversing takes reciprocal.
+
+24. A reaction is spontaneous if:
+A. ΔG < 0
+B. ΔH < 0
+C. ΔS > 0
+D. All of the above
+Answer: A
+Explanation: Gibbs: ΔG = ΔH - TΔS. Spontaneous when ΔG < 0. Exception: Endothermic reactions (ΔH > 0) CAN be spontaneous if ΔS is large and positive (entropy-driven).
+
+25. Diamond is harder than graphite because:
+A. 3D network of strong C-C bonds vs 2D layers
+B. Diamond has metallic bonding
+C. Graphite has ionic bonding
+D. Diamond has more electrons
+Answer: A
+Explanation: Diamond: sp³, tetrahedral. Graphite: sp², layered with weak van der Waals between layers. Exception: Graphite conducts electricity (delocalized electrons in layers); diamond doesn't.
+
+26. The melting point of NaCl (ionic) is higher than I₂ (molecular) because:
+A. Ionic bonds stronger than van der Waals forces
+B. NaCl has more atoms
+C. I₂ is covalent
+D. NaCl is soluble in water
+Answer: A
+Explanation: Ionic > covalent network > metallic > polar molecular > nonpolar molecular (general trend). Exception: Network covalent (diamond, SiO₂) can exceed some ionic compounds.
+
+27. Transition metals show variable oxidation states because:
+A. d electrons participate in bonding
+B. They are large atoms
+C. They are metals
+D. They conduct electricity
+Answer: A
+Explanation: d electrons have similar energy to s electrons; can lose different numbers. Exception: Scandium and zinc (on edges of d-block) show mainly +3 and +2 respectively—less variable.
+
+28. Which is a Lewis acid?
+A. BF₃ (electron deficient)
+B. NH₃
+C. H₂O
+D. OH⁻
+Answer: A
+Explanation: Lewis acid = electron pair acceptor. BF₃ has empty orbital. Exception: Broader than Brønsted (proton transfer); includes species without H⁺.
+
+29. The pH of 10⁻⁸ M HCl is:
+A. Approximately 7 (water ionization dominates)
+B. Exactly 8
+C. Exactly -8
+D. 14
+Answer: A
+Explanation: At very low acid concentration, water's H⁺ (10⁻⁷ M) becomes significant. Total [H⁺] ≈ 10⁻⁷ M, pH ≈ 7. Exception: Can't ignore water ionization when acid concentration < 10⁻⁶ M.
+
+30. Effusion rate of gas A is twice that of gas B. If M_A = 4, then M_B is:
+A. 16
+B. 8
+C. 2
+D. 1
+Answer: A
+Explanation: Graham's law: rate ∝ 1/√M. r_A/r_B = √(M_B/M_A). 2 = √(M_B/4), so M_B = 16. Exception: Rates inversely proportional to square root of molar mass, not mass directly.
+
+31. Real gases deviate from ideal behavior at:
+A. High pressure and low temperature
+B. Low pressure and high temperature
+C. All conditions equally
+D. Never deviate
+Answer: A
+Explanation: High P: volume of molecules matters. Low T: intermolecular forces matter. Exception: Ideal gas law assumes point particles with no attractions—fails when these assumptions break down.
+
+32. The van der Waals equation corrects ideal gas law for:
+A. Molecular volume (b) and intermolecular forces (a)
+B. Temperature only
+C. Pressure only
+D. Chemical reactions
+Answer: A
+Explanation: (P + a/V²)(V - b) = RT. 'a' corrects pressure, 'b' corrects volume. Exception: Different gases have different a and b values; no single correction works for all.
+
+33. Charcoal adsorbs gases because:
+A. High surface area (porous structure)
+B. It's black
+C. It's solid
+D. It's carbon
+Answer: A
+Explanation: Adsorption (surface) vs absorption (volume). Activated charcoal has huge surface area. Exception: Physical adsorption (weak van der Waals) is reversible; chemisorption involves bond formation.
+
+34. A catalyst increases reaction rate by:
+A. Lowering activation energy
+B. Increasing temperature
+C. Increasing concentration
+D. Shifting equilibrium
+Answer: A
+Explanation: Catalyst provides alternative pathway with lower Ea. Exception: Catalyst doesn't change ΔH, ΔG, or equilibrium position—only affects rate of reaching equilibrium.
+
+35. Rate = k[A]²[B]. If [A] doubles and [B] triples, rate:
+A. Increases 12× (2² × 3)
+B. Increases 6×
+C. Doubles
+D. Triples
+Answer: A
+Explanation: Rate_new = k(2[A])²(3[B]) = 4 × 3 × k[A]²[B] = 12 × Rate_old. Exception: Reaction order determines how concentration changes affect rate—not always linear.
