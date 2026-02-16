@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>{{SUBJECT_NAME}} - JAMB Practice Test</title>
+    <!-- Generated: Period {{PERIOD}}, Day {{DAY_RANGE}}, {{GENERATED_DATE}} -->
+    <!-- Validation: {{VALIDATION_STATUS}} -->
+    <!-- Subjects: {{SUBJECTS_LIST}} -->
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="quiz-body">
+    
+    <!-- Error/Warning Banner -->
+    <div id="error-banner" class="error-banner hidden">
+        <div class="error-content">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <h3 id="error-title">Notice</h3>
+                <p id="error-message"></p>
+            </div>
+            <button class="btn-icon" onclick="closeBanner()" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Fallback Container (Previous Quiz) -->
+    <div id="fallback-container" class="fallback-container hidden">
+        <div class="fallback-content">
+            <div class="fallback-icon">
+                <i class="fas fa-hourglass-half"></i>
+            </div>
+            <h2>Today's Quiz is Being Prepared</h2>
+            <p id="fallback-message">We're generating your Day {{DAY_RANGE}} quiz. Practice yesterday's quiz while waiting.</p>
+            <div class="fallback-timer">
+                <p>Check back in: <span id="fallback-countdown">15:00</span></p>
+            </div>
+            <button class="btn btn-primary" onclick="loadPreviousQuiz()">
+                <i class="fas fa-play"></i> Practice Previous Quiz
+            </button>
+            <button class="btn btn-secondary" onclick="location.reload()">
+                <i class="fas fa-sync"></i> Refresh Page
+            </button>
+        </div>
+    </div>
+    
+    <!-- Fixed Header with Timer -->
+    <header class="quiz-header">
+        <div class="quiz-header-container">
+            <!-- Left: Subject Info -->
+            <div class="quiz-header-left">
+                <button class="btn-icon" id="menuBtn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="subject-info">
+                    <div class="subject-name" id="subjectName">{{SUBJECT_NAME}}</div>
+                    <div class="subject-meta">Day {{DAY_RANGE}} • Question <span id="currentQuestionNum">1</span> of <span id="totalQuestions">{{TOTAL_QUESTIONS}}</span></div>
+                </div>
+            </div>
+            
+            <!-- Center: Timer -->
+            <div class="quiz-timer-container">
+                <div class="timer-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="timer-display" id="timerDisplay">{{TIMER_DURATION}}</div>
+                <div class="timer-progress-ring">
+                    <svg width="60" height="60">
+                        <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+                        <circle id="timerProgressCircle" cx="30" cy="30" r="26" fill="none" stroke="var(--accent)" 
+                                stroke-width="4" stroke-dasharray="163.36" stroke-dashoffset="0" 
+                                transform="rotate(-90 30 30)" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Right: Actions -->
+            <div class="quiz-header-right">
+                <button class="btn-icon" id="calculatorBtn" aria-label="Calculator">
+                    <i class="fas fa-calculator"></i>
+                </button>
+                <button class="btn btn-sm btn-danger" id="submitBtn">
+                    Submit Test
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Quiz Container -->
+    <div class="quiz-container">
+        
+        <!-- Sidebar: Question Navigator -->
+        <aside class="quiz-sidebar" id="quizSidebar">
+            <div class="sidebar-header">
+                <h3>Question Navigator</h3>
+                <button class="btn-icon btn-close-sidebar" id="closeSidebar" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="answeredCount">0</div>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="unansweredCount">{{TOTAL_QUESTIONS}}</div>
+                    <div class="stat-label">Unanswered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="flaggedCount">0</div>
+                    <div class="stat-label">Flagged</div>
+                </div>
+            </div>
+            
+            <div class="question-palette" id="questionPalette">
+                <!-- Generated by JS -->
+            </div>
+            
+            <div class="sidebar-legend">
+                <div class="legend-item">
+                    <span class="legend-dot answered"></span>
+                    <span>Answered</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot current"></span>
+                    <span>Current</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot flagged"></span>
+                    <span>Flagged</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot unanswered"></span>
+                    <span>Unanswered</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Question Area -->
+        <main class="quiz-main">
+            <!-- Question Card -->
+            <div class="question-card" id="questionCard">
+                <div class="question-header">
+                    <div class="question-number">
+                        Question <span id="questionNumber">1</span>
+                    </div>
+                    <button class="btn-flag" id="flagBtn" aria-label="Flag question">
+                        <i class="far fa-flag"></i>
+                        <span>Flag</span>
+                    </button>
+                </div>
+                
+                <div class="question-text" id="questionText">
+                    Loading question...
+                </div>
+                
+                <div class="options-container" id="optionsContainer">
+                    <!-- Generated by JS -->
+                </div>
+
+                <!-- Explanation (Hidden until review mode) -->
+                <div class="question-explanation hidden" id="questionExplanation">
+                    <div class="explanation-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Explanation</span>
+                    </div>
+                    <div class="explanation-content" id="explanationContent"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="quiz-navigation">
+                <button class="btn btn-secondary" id="prevBtn" disabled>
+                    <i class="fas fa-arrow-left"></i>
+                    Previous
+                </button>
+                
+                <button class="btn btn-secondary" id="clearBtn">
+                    <i class="fas fa-eraser"></i>
+                    Clear Response
+                </button>
+                
+                <button class="btn btn-primary" id="nextBtn">
+                    Next
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Question Palette -->
+    <div class="mobile-palette-trigger" id="mobilePaletteBtn">
+        <i class="fas fa-th"></i>
+        <span>Questions</span>
+    </div>
+
+    <!-- Modals (Submit, Calculator, Time's Up) -->
+    <div class="modal-overlay hidden" id="submitModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Submit Test?</h3>
+                <button class="btn-icon" id="closeSubmitModal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="submit-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Questions:</span>
+                        <span class="summary-value" id="modalTotalQuestions">{{TOTAL_QUESTIONS}}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Answered:</span>
+                        <span class="summary-value answered-text" id="modalAnsweredCount">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Unanswered:</span>
+                        <span class="summary-value warning-text" id="modalUnansweredCount">{{TOTAL_QUESTIONS}}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Time Remaining:</span>
+                        <span class="summary-value" id="modalTimeRemaining">{{TIMER_DURATION}}</span>
+                    </div>
+                </div>
+                <div class="warning-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>You cannot change your answers after submission.</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelSubmitBtn">Cancel</button>
+                <button class="btn btn-danger" id="confirmSubmitBtn">
+                    <i class="fas fa-check"></i> Submit Test
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="calculatorModal">
+        <div class="modal calculator-modal">
+            <div class="modal-header">
+                <h3>Calculator</h3>
+                <button class="btn-icon" id="closeCalculatorModal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="calculator">
+                    <input type="text" class="calculator-display" id="calcDisplay" value="0" readonly>
+                    <div class="calculator-buttons">
+                        <button class="calc-btn" data-action="clear">C</button>
+                        <button class="calc-btn" data-action="delete">←</button>
+                        <button class="calc-btn" data-action="divide">÷</button>
+                        <button class="calc-btn" data-action="multiply">×</button>
+                        <button class="calc-btn" data-value="7">7</button>
+                        <button class="calc-btn" data-value="8">8</button>
+                        <button class="calc-btn" data-value="9">9</button>
+                        <button class="calc-btn" data-action="subtract">−</button>
+                        <button class="calc-btn" data-value="4">4</button>
+                        <button class="calc-btn" data-value="5">5</button>
+                        <button class="calc-btn" data-value="6">6</button>
+                        <button class="calc-btn" data-action="add">+</button>
+                        <button class="calc-btn" data-value="1">1</button>
+                        <button class="calc-btn" data-value="2">2</button>
+                        <button class="calc-btn" data-value="3">3</button>
+                        <button class="calc-btn calc-equals" data-action="equals" style="grid-row: span 2;">=</button>
+                        <button class="calc-btn" data-value="0" style="grid-column: span 2;">0</button>
+                        <button class="calc-btn" data-value=".">.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="timeUpModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Time's Up!</h3>
+            </div>
+            <div class="modal-body">
+                <div class="time-up-message">
+                    <i class="fas fa-hourglass-end"></i>
+                    <p>Your test time has expired. Your answers have been automatically submitted.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="viewResultsBtn">View Results</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Quiz Data -->
+    <script>
+        // Quiz metadata
+        window.quizMetadata = {
+            period: {{PERIOD}},
+            days: "{{DAY_RANGE}}",
+            subject: "{{SUBJECT_NAME}}",
+            generatedDate: "{{GENERATED_DATE}}",
+            validationStatus: "{{VALIDATION_STATUS}}",
+            totalQuestions: {{TOTAL_QUESTIONS}},
+            timerMinutes: {{TIMER_MINUTES}}
+        };
+
+        // Question data - REPLACED BY WORKFLOW
+        window.quizData = {{QUESTIONS_JSON}};
+    </script>
+
+    <!-- Fisher-Yates Shuffle Algorithm -->
+    <script>
+        /**
+         * Fisher-Yates shuffle algorithm for option randomization
+         * @param {Object} question - Question object with options
+         * @returns {Object} - Shuffled options with correct answer index
+         */
+        function shuffleOptions(question) {
+            const options = [
+                { label: 'A', text: question.optionA, original: 'A' },
+                { label: 'B', text: question.optionB, original: 'B' },
+                { label: 'C', text: question.optionC, original: 'C' },
+                { label: 'D', text: question.optionD, original: 'D' }
+            ];
+            
+            const correctAnswer = question.answer; // e.g., 'B'
+            
+            // Fisher-Yates shuffle
+            for (let i = options.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [options[i], options[j]] = [options[j], options[i]];
+            }
+            
+            // Reassign display labels after shuffle
+            const shuffledOptions = options.map((opt, idx) => ({
+                displayLabel: String.fromCharCode(65 + idx), // A, B, C, D
+                text: opt.text,
+                original: opt.original
+            }));
+            
+            // Find new position of correct answer
+            const correctIndex = shuffledOptions.findIndex(opt => opt.original === correctAnswer);
+            const newCorrectLabel = shuffledOptions[correctIndex].displayLabel;
+            
+            return {
+                shuffledOptions: shuffledOptions,
+                correctAnswer: newCorrectLabel,
+                originalCorrectAnswer: correctAnswer
+            };
+        }
+    </script>
+
+    <!-- Quiz Validation & Initialization -->
+    <script>
+        // Validate quiz data on load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Check if quiz data exists
+            if (!window.quizData || !Array.isArray(window.quizData)) {
+                showFallback('no-data');
+                return;
+            }
+            
+            // Check if quiz data is empty
+            if (window.quizData.length === 0) {
+                showFallback('empty-data');
+                return;
+            }
+            
+            // Filter valid questions only
+            const validQuestions = window.quizData.filter(q => 
+                q && 
+                q.text && 
+                q.optionA && q.optionB && q.optionC && q.optionD && 
+                q.answer && 
+                ['A', 'B', 'C', 'D'].includes(q.answer)
+            );
+            
+            // Check if we have partial data
+            if (validQuestions.length === 0) {
+                showFallback('invalid-data');
+                return;
+            }
+            
+            if (validQuestions.length < window.quizData.length) {
+                const missing = window.quizData.length - validQuestions.length;
+                showWarning(
+                    'Partial Quiz Available',
+                    `${validQuestions.length} out of ${window.quizData.length} questions are available. ${missing} questions had errors and were skipped.`
+                );
+            }
+            
+            // Update quiz data to valid questions only
+            window.quizData = validQuestions;
+            window.quizMetadata.totalQuestions = validQuestions.length;
+            
+            // Initialize quiz with validated data
+            initializeQuiz();
+        });
+
+        function showWarning(title, message) {
+            const banner = document.getElementById('error-banner');
+            const titleEl = document.getElementById('error-title');
+            const messageEl = document.getElementById('error-message');
+            
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            banner.classList.remove('hidden');
+            banner.style.backgroundColor = '#fef3c7'; // Warning yellow
+            banner.querySelector('i').style.color = '#f59e0b';
+        }
+
+        function showError(title, message) {
+            const banner = document.getElementById('error-banner');
+            const titleEl = document.getElementById('error-title');
+            const messageEl = document.getElementById('error-message');
+            
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            banner.classList.remove('hidden');
+            banner.style.backgroundColor = '#fee2e2'; // Error red
+            banner.querySelector('i').style.color = '#ef4444';
+        }
+
+        function closeBanner() {
+            document.getElementById('error-banner').classList.add('hidden');
+        }
+
+        function showFallback(reason) {
+            const container = document.getElementById('fallback-container');
+            const messageEl = document.getElementById('fallback-message');
+            
+            const messages = {
+                'no-data': `We're still generating your Day ${window.quizMetadata.days} quiz. Please check back in a few minutes.`,
+                'empty-data': `Your Day ${window.quizMetadata.days} quiz is being prepared. Practice yesterday's quiz while waiting.`,
+                'invalid-data': `There was an issue loading today's quiz. Please try refreshing or practice yesterday's quiz.`
+            };
+            
+            messageEl.textContent = messages[reason] || messages['no-data'];
+            container.classList.remove('hidden');
+            
+            // Hide main quiz interface
+            document.querySelector('.quiz-header').style.display = 'none';
+            document.querySelector('.quiz-container').style.display = 'none';
+            
+            // Start countdown
+            startFallbackCountdown();
+        }
+
+        function startFallbackCountdown() {
+            let seconds = 15 * 60; // 15 minutes
+            const countdownEl = document.getElementById('fallback-countdown');
+            
+            const timer = setInterval(() => {
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    countdownEl.textContent = '00:00';
+                    return;
+                }
+                
+                seconds--;
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                countdownEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function loadPreviousQuiz() {
+            const currentPeriod = window.quizMetadata.period;
+            const previousPeriod = currentPeriod - 1;
+            
+            if (previousPeriod < 1) {
+                alert('No previous quiz available. This is the first quiz!');
+                return;
+            }
+            
+            // Redirect to previous period's quiz
+            const currentFile = window.location.pathname.split('/').pop();
+            const previousFile = currentFile.replace(`period-${currentPeriod}`, `period-${previousPeriod}`);
+            
+            window.location.href = previousFile;
+        }
+
+        function initializeQuiz() {
+            // Quiz initialization code here
+            // This will be handled by existing quiz-app.js
+            console.log('Quiz initialized with', window.quizData.length, 'valid questions');
+        }
+    </script>
+
+    <!-- Load existing quiz scripts -->
+    <script src="question-parser.js"></script>
+    <script src="quiz-launcher.js"></script>
+    <script src="quiz-app.js"></script>
+</body>
+</html>
