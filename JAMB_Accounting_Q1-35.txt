@@ -1,0 +1,244 @@
+1. The systematic recording of business transactions is called?
+A. Auditing
+B. Book-keeping
+C. Accounting
+D. Costing
+Answer: B
+
+2. The accounting equation is?
+A. Assets = Liabilities + Capital
+B. Assets = Capital - Liabilities
+C. Liabilities = Assets + Capital
+D. Capital = Assets - Liabilities
+Answer: A
+
+3. Which of the following is a current asset?
+A. Land
+B. Building
+C. Cash
+D. Goodwill
+Answer: C
+
+4. The double entry principle states that?
+A. Every transaction has two entries
+B. Every debit has a credit
+C. Assets equal liabilities
+D. Income equals expenses
+Answer: B
+
+5. A business document that lists goods supplied with their prices is?
+A. Receipt
+B. Invoice
+C. Voucher
+D. Statement
+Answer: B
+
+6. Depreciation is charged on?
+A. Current assets
+B. Fixed assets
+C. Intangible assets
+D. All assets
+Answer: B
+
+7. The excess of current assets over current liabilities is called?
+A. Net profit
+B. Working capital
+C. Capital employed
+D. Gross profit
+Answer: B
+
+8. Bad debts are debts that are?
+A. Not yet due
+B. Overdue
+C. Irrecoverable
+D. Recoverable
+Answer: C
+
+9. Gross profit is calculated as?
+A. Sales minus cost of goods sold
+B. Sales minus all expenses
+C. Revenue minus capital
+D. Assets minus liabilities
+Answer: A
+
+10. A trial balance is prepared to?
+A. Determine profit
+B. Check arithmetical accuracy
+C. Calculate depreciation
+D. Value stock
+Answer: B
+
+11. Which of the following is a liability?
+A. Cash
+B. Debtors
+C. Creditors
+D. Stock
+Answer: C
+
+12. The accounting period is usually?
+A. Monthly
+B. Quarterly
+C. Annually
+D. Weekly
+Answer: C
+
+13. Accrued expenses are expenses that are?
+A. Paid in advance
+B. Outstanding
+C. Prepaid
+D. Cancelled
+Answer: B
+
+14. The straight-line method of depreciation charges?
+A. Equal amounts each year
+B. Reducing amounts each year
+C. Increasing amounts each year
+D. Variable amounts each year
+Answer: A
+
+15. Cash discount is given for?
+A. Prompt payment
+B. Bulk purchase
+C. Trade purposes
+D. Goodwill
+Answer: A
+
+16. Which account is credited when goods are sold on credit?
+A. Cash account
+B. Sales account
+C. Purchases account
+D. Debtors account
+Answer: B
+
+17. The book of original entry for credit sales is the?
+A. Cash book
+B. Sales journal
+C. Purchases journal
+D. General journal
+Answer: B
+
+18. Carriage inwards is added to?
+A. Sales
+B. Purchases
+C. Capital
+D. Liabilities
+Answer: B
+
+19. A provision for doubtful debts is created to?
+A. Write off bad debts
+B. Anticipate bad debts
+C. Recover debts
+D. Increase debtors
+Answer: B
+
+20. Net profit is transferred to?
+A. Trading account
+B. Profit and loss account
+C. Capital account
+D. Balance sheet
+Answer: C
+
+21. The document sent to a customer who returns goods is?
+A. Debit note
+B. Credit note
+C. Invoice
+D. Receipt
+Answer: B
+
+22. Opening stock plus purchases minus closing stock equals?
+A. Gross profit
+B. Net profit
+C. Cost of goods sold
+D. Sales
+Answer: C
+
+23. Petty cash is used for?
+A. Large payments
+B. Small routine expenses
+C. Capital expenditure
+D. Loan repayment
+Answer: B
+
+24. The purpose of financial statements is to?
+A. Comply with law
+B. Show financial position
+C. Calculate tax
+D. Attract investors
+Answer: B
+
+25. Assets purchased for long-term use are called?
+A. Current assets
+B. Fixed assets
+C. Liquid assets
+D. Fictitious assets
+Answer: B
+
+26. The bank reconciliation statement is prepared to?
+A. Find bank balance
+B. Agree cashbook with bank statement
+C. Calculate interest
+D. Record cheques
+Answer: B
+
+27. Revenue expenditure is?
+A. Capital in nature
+B. For fixed assets
+C. For day-to-day expenses
+D. Long-term
+Answer: C
+
+28. Drawings by the owner reduce?
+A. Assets
+B. Liabilities
+C. Capital
+D. Revenue
+Answer: C
+
+29. The current ratio measures?
+A. Profitability
+B. Liquidity
+C. Efficiency
+D. Solvency
+Answer: B
+
+30. Goodwill is classified as?
+A. Current asset
+B. Fixed asset
+C. Intangible asset
+D. Tangible asset
+Answer: C
+
+31. A debit balance in the cash book means?
+A. Bank overdraft
+B. Cash at bank
+C. Cash shortage
+D. Bank loan
+Answer: B
+
+32. The journal is used to record?
+A. Cash transactions
+B. Credit transactions
+C. Non-routine transactions
+D. All transactions
+Answer: C
+
+33. Stock valuation is based on?
+A. Cost price only
+B. Selling price only
+C. Lower of cost and net realizable value
+D. Average price
+Answer: C
+
+34. Creditors are found in the?
+A. Trading account
+B. Profit and loss account
+C. Balance sheet
+D. Cash book
+Answer: C
+
+35. The accounting concept that requires revenue to be recognized when earned is?
+A. Matching concept
+B. Realization concept
+C. Going concern concept
+D. Consistency concept
+Answer: B
