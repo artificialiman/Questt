@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Science — MEPC v8 — JAMB Practice · GrantApp AI</title>
+    <link rel="stylesheet" href="quiz-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="quiz-body">
+
+<script>
+const DURATION = 3600;
+
+/* ════════════════════════════════════════════════════════════
+   COMPREHENSION PASSAGES
+════════════════════════════════════════════════════════════ */
+
+const P1 = `The laboratory at St. Augustine's Secondary School had not been officially opened since the last inspector's visit, which was three years ago and whose findings had been filed, cross-referenced, and quietly ignored. The equipment inside was neither broken nor functional — it existed in the specific condition of things that are maintained just well enough to be photographed. The gas taps had not been tested. The microscopes were clean. The fire extinguisher had been recharged the week before each inspection for eleven consecutive years and allowed to expire quietly in the intervals between.
+
+The new science teacher, Mr. Eze, had the particular misfortune of caring. He arrived in September and by October had submitted three written requests, each more detailed than the last, asking that the laboratory be made operational. The principal, a man who had navigated thirty years of institutional life by distinguishing carefully between problems that required solutions and problems that required documentation, responded to each request with a memorandum. The memos were thorough, sympathetically worded, and produced no change.
+
+In November, Mr. Eze held his first practical lesson in the open courtyard, using equipment he had purchased himself. The students, accustomed to copying diagrams of experiments they had never performed, were uncertain how to respond to an actual flame. By December, word had reached the PTA. By January, the laboratory was open.`;
+
+const P2 = `My uncle Chukwuemeka had a theory about maps. He believed they were not records of the world but instructions for how to see it — that once you had read a map of a place, you could no longer see the place itself, only the map's version of it. He applied this theory selectively, as people apply their best theories, which is to say he applied it whenever it supported what he already intended to do.
+
+He had never learned to drive, which he attributed to the map theory: a road, once named and numbered and plotted, became in his view a fundamentally lesser thing than a path discovered on foot. His actual reason for not driving, which his wife disclosed to me some years after his death, was that he had failed the test four times in 1987 and found the map theory more satisfying than the truth.
+
+He was nonetheless an extraordinary navigator on foot. He could find his way through any city he had not previously visited by what he called "attending to the logic of the place" — which turned out to mean reading shop signs, noting the direction of traffic, and asking strangers, all of which he performed with such practised confidence that observers assumed he knew where he was going. He usually arrived. The route was rarely the same twice.`;
+
+
+/* ════════════════════════════════════════════════════════════
+   QUESTIONS
+   Q1  – Q55  : English  (55)
+   Q56 – Q90  : Mathematics  (35)
+   Q91 – Q125 : Physics  (35)
+   Q126– Q160 : Chemistry  (35)
+════════════════════════════════════════════════════════════ */
+
+const QUESTIONS = [
+
+/* ─────────────────────────────────────────────────────────
+   ENGLISH  Q1 – Q55
+   Q1–10   : Passage 1 (The Laboratory)
+   Q11–20  : Passage 2 (The Map Theory)
+   Q21–32  : Stress & Phonetics
+   Q33–55  : Grammar, Vocabulary & Usage
+───────────────────────────────────────────────────────── */
+
+  /* ── Passage 1: The Laboratory ── */
+  {
+    id: 1, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'The laboratory equipment is described as existing in "the specific condition of things that are maintained just well enough to be photographed." This phrase means the equipment was:',
+    options: {
+      A: 'kept functional for student use at all times',
+      B: 'preserved for appearances rather than actual use',
+      C: 'stored safely to prevent student accidents',
+      D: 'documented carefully by the school inspector',
+    },
+    answer: 'B',
+    explanation: 'The phrase captures deliberate maintenance for visual inspection only — not genuine functionality. The fire extinguisher detail confirms this: recharged before visits, left to expire between them.',
+    // Level:4, Taxonomy:Logical, Tag:comprehension-inference, Triage:Return
+  },
+  {
+    id: 2, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'The principal is described as someone who distinguished between "problems that required solutions and problems that required documentation." This characterises him as:',
+    options: {
+      A: 'a diligent administrator who prioritised written records',
+      B: 'a corrupt official who ignored all complaints',
+      C: 'a pragmatist who managed problems through bureaucratic deflection',
+      D: 'an incompetent leader who could not read Mr. Eze\'s requests',
+    },
+    answer: 'C',
+    explanation: 'The description is precise and unsentimental — he was not corrupt or incompetent, but skilled at responding without acting. "Pragmatist" fits; the distinguishing action is deliberate deflection, not ignorance.',
+    // Level:5, Taxonomy:Logical, Tag:comprehension-characterisation, Triage:Return
+  },
+  {
+    id: 3, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'What is the purpose of the detail that the fire extinguisher "had been recharged the week before each inspection for eleven consecutive years"?',
+    options: {
+      A: 'to show that safety standards were consistently maintained',
+      B: 'to demonstrate the school\'s careful compliance with fire regulations',
+      C: 'to illustrate the pattern of performance over genuine practice',
+      D: 'to explain why the laboratory could not be used by students',
+    },
+    answer: 'C',
+    explanation: 'The detail is the clearest evidence of the passage\'s central theme — the gap between appearance and reality. Eleven years of timed recharging is too precise to be coincidence; it proves the pattern is systemic.',
+    // Level:4, Taxonomy:Abstract, Tag:comprehension-detail-purpose, Triage:Return
+  },
+  {
+    id: 4, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'The phrase "the particular misfortune of caring" is an example of:',
+    options: {
+      A: 'paradox — caring is presented as a disadvantage in context',
+      B: 'simile — caring is compared to misfortune indirectly',
+      C: 'hyperbole — the writer exaggerates Mr. Eze\'s emotional state',
+      D: 'alliteration — the repetition of consonant sounds for effect',
+    },
+    answer: 'A',
+    explanation: 'Paradox holds two ideas in tension that seem contradictory. Caring is normally a virtue; the word "misfortune" inverts this. The irony is that within this institutional context, caring creates difficulty.',
+    // Level:4, Taxonomy:Abstract, Tag:figures-of-speech, Triage:Return
+  },
+  {
+    id: 5, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'Why were the students "uncertain how to respond to an actual flame"?',
+    options: {
+      A: 'they had been warned by the principal not to use open flames',
+      B: 'they had only ever studied experiments theoretically, not performed them',
+      C: 'the flame was larger and more dangerous than expected',
+      D: 'the courtyard setting made the experiment feel unofficial',
+    },
+    answer: 'B',
+    explanation: 'The passage states they were "accustomed to copying diagrams of experiments they had never performed." The uncertainty arose from encountering a real phenomenon they had only previously represented on paper.',
+    // Level:3, Taxonomy:Logical, Tag:comprehension-inference, Triage:Sprint
+  },
+  {
+    id: 6, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'The sequence "By December... By January..." is used primarily to:',
+    options: {
+      A: 'show the slow pace of institutional change in schools',
+      B: 'create a sense of mounting momentum after Mr. Eze\'s action',
+      C: 'contrast December and January as academic calendar markers',
+      D: 'suggest that the PTA meeting was poorly attended at first',
+    },
+    answer: 'B',
+    explanation: 'The tightly compressed timeline — one month between courtyard lesson, PTA awareness, and laboratory opening — creates narrative acceleration, showing that direct action produced rapid results where paperwork had produced none.',
+    // Level:4, Taxonomy:Abstract, Tag:comprehension-structure, Triage:Return
+  },
+  {
+    id: 7, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'The writer\'s tone toward Mr. Eze is best described as:',
+    options: {
+      A: 'critical — he acted outside proper institutional channels',
+      B: 'quietly admiring — his persistence and initiative are presented positively',
+      C: 'neutral — the writer reports events without evaluating anyone',
+      D: 'pitying — Mr. Eze is portrayed as naive and ineffective',
+    },
+    answer: 'B',
+    explanation: 'Mr. Eze\'s three detailed requests, self-funded equipment, and ultimate success are all presented without irony. The irony is directed at the institution, not at him. His actions are the passage\'s moral centre.',
+    // Level:5, Taxonomy:Abstract, Tag:comprehension-tone, Triage:Return
+  },
+  {
+    id: 8, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'Which statement BEST captures the main idea of Passage 1?',
+    options: {
+      A: 'science education in Nigeria is permanently underfunded',
+      B: 'individual initiative can overcome institutional inertia when direct action replaces documentation',
+      C: 'school inspectors are responsible for the poor state of laboratory equipment',
+      D: 'principals should face consequences for ignoring teachers\' requests',
+    },
+    answer: 'B',
+    explanation: 'The passage traces a specific causal arc: paperwork failed, direct action succeeded. The main idea is the contrast between institutional response (memos) and individual agency (courtyard lesson), not a broader policy claim.',
+    // Level:5, Taxonomy:Logical, Tag:main-idea, Triage:Return
+  },
+  {
+    id: 9, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: '"Sympathetically worded, and produced no change" — the conjunction "and" here functions as:',
+    options: {
+      A: 'additive — listing two equal qualities of the memos',
+      B: 'adversative — creating contrast between tone and effect',
+      C: 'causal — showing that sympathy caused the lack of change',
+      D: 'temporal — indicating the sequence in which things happened',
+    },
+    answer: 'B',
+    explanation: 'The "and" joins two ideas that are in tension: warm tone + zero outcome. The expected word would be "but" — using "and" instead makes the contradiction more deadpan and therefore more damning.',
+    // Level:5, Taxonomy:Abstract, Tag:grammar-conjunction, Triage:Pro-Ceiling
+  },
+  {
+    id: 10, subject: 'English',
+    passageTitle: 'The Laboratory',
+    passage: P1,
+    text: 'The inspector\'s findings were "filed, cross-referenced, and quietly ignored." The adverb "quietly" suggests:',
+    options: {
+      A: 'the filing was done in a silent room without witnesses',
+      B: 'the ignoring was deliberate but conducted without public acknowledgement',
+      C: 'the reports were classified and restricted from public view',
+      D: 'the inspectors themselves did not wish to cause disruption',
+    },
+    answer: 'B',
+    explanation: '"Quietly" modifies the ignoring, not the filing. It implies the neglect was conscious and managed — not accidental — but carried out without announcement, which is more damning than open defiance.',
+    // Level:5, Taxonomy:Abstract, Tag:diction, Triage:Return
+  },
+
+  /* ── Passage 2: The Map Theory ── */
+  {
+    id: 11, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: 'According to the passage, Uncle Chukwuemeka believed maps were:',
+    options: {
+      A: 'unreliable guides that frequently contained errors',
+      B: 'instructions that replaced direct perception of a place',
+      C: 'necessary tools for navigation in unfamiliar cities',
+      D: 'records of historical geography best studied at home',
+    },
+    answer: 'B',
+    explanation: 'His theory was explicit: maps are "not records of the world but instructions for how to see it" — once read, they override direct observation. The map\'s version supplants the place itself.',
+    // Level:3, Taxonomy:Logical, Tag:comprehension-inference, Triage:Sprint
+  },
+  {
+    id: 12, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: 'The phrase "as people apply their best theories, which is to say whenever it supported what he already intended to do" reveals that the uncle:',
+    options: {
+      A: 'was a rigorous thinker who tested theories against evidence',
+      B: 'used intellectual frameworks to justify prior decisions',
+      C: 'developed the map theory specifically to avoid using maps',
+      D: 'believed all theories should be applied consistently',
+    },
+    answer: 'B',
+    explanation: 'The writer\'s aside is gently ironic — it exposes motivated reasoning. The uncle did not derive conclusions from the theory; he selected the theory because it supported conclusions already reached.',
+    // Level:5, Taxonomy:Logical, Tag:comprehension-inference, Triage:Return
+  },
+  {
+    id: 13, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: 'What is the effect of disclosing the true reason for not driving in the second paragraph?',
+    options: {
+      A: 'it undermines the uncle\'s intelligence and makes him seem foolish',
+      B: 'it reframes the map theory as rationalisation rather than genuine philosophy',
+      C: 'it reveals that the uncle\'s wife disapproved of his behaviour',
+      D: 'it explains why he became such a skilled pedestrian navigator',
+    },
+    answer: 'B',
+    explanation: 'The disclosure — four failed tests in 1987 — retroactively recontextualises the entire first paragraph. What seemed like philosophy is revealed as elaborate self-justification. The uncle "found the map theory more satisfying than the truth."',
+    // Level:5, Taxonomy:Logical, Tag:comprehension-structure, Triage:Return
+  },
+  {
+    id: 14, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: 'The uncle\'s navigation method — "reading shop signs, noting traffic direction, and asking strangers" — is presented as:',
+    options: {
+      A: 'dangerous and unreliable in practice',
+      B: 'genuinely skilful, though ordinary in its components',
+      C: 'proof that the map theory was philosophically correct',
+      D: 'inferior to map-reading in unfamiliar cities',
+    },
+    answer: 'B',
+    explanation: 'The writer reveals the method\'s mundane components with gentle irony — but also confirms it worked. "He usually arrived." The skill lay in execution and confidence, not in any special gift.',
+    // Level:4, Taxonomy:Abstract, Tag:comprehension-inference, Triage:Return
+  },
+  {
+    id: 15, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: '"He usually arrived. The route was rarely the same twice." These two short sentences together create a tone of:',
+    options: {
+      A: 'sorrow — the uncle never fully mastered navigation',
+      B: 'dry affection — acknowledging both his success and its improvised nature',
+      C: 'criticism — his inconsistent routes wasted time and energy',
+      D: 'admiration — the varied routes proved superior to fixed paths',
+    },
+    answer: 'B',
+    explanation: 'The brevity and juxtaposition are characteristic of the passage\'s voice throughout. "Usually arrived" concedes imperfection without dismissal. "Rarely the same twice" is amused, not critical.',
+    // Level:5, Taxonomy:Abstract, Tag:comprehension-tone, Triage:Return
+  },
+  {
+    id: 16, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: 'The writer describes the uncle\'s confident appearance to strangers as causing them to assume "he knew where he was going." This is an example of:',
+    options: {
+      A: 'dramatic irony — the reader knows what the strangers do not',
+      B: 'verbal irony — the writer says the opposite of what is meant',
+      C: 'situational irony — the outcome contradicts the expected situation',
+      D: 'cosmic irony — forces beyond the uncle\'s control determined his path',
+    },
+    answer: 'A',
+    explanation: 'Dramatic irony requires the reader to know something characters in the scene do not. We know the uncle is improvising; the strangers do not. Their assumption is wrong in a way visible only to us.',
+    // Level:4, Taxonomy:Abstract, Tag:irony-type, Triage:Return
+  },
+  {
+    id: 17, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: 'The writer\'s attitude toward the uncle throughout the passage is best described as:',
+    options: {
+      A: 'fondly ironic — he is exposed but not diminished',
+      B: 'openly critical — his self-deception is presented as a flaw',
+      C: 'entirely neutral — the writer only reports without evaluating',
+      D: 'deeply admiring — the uncle is portrayed as a genuine philosopher',
+    },
+    answer: 'A',
+    explanation: 'The writer reveals the failed driving tests but also confirms the uncle\'s navigational success. The irony is warm, not caustic. The uncle is flawed, rationalising, and yet genuinely capable — the writer holds all of this at once.',
+    // Level:5, Taxonomy:Abstract, Tag:comprehension-tone, Triage:Return
+  },
+  {
+    id: 18, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: '"Attending to the logic of the place" — the word "logic" as used here most nearly means:',
+    options: {
+      A: 'formal deductive reasoning applied to spatial problems',
+      B: 'the internal patterns and signals a place produces for an attentive observer',
+      C: 'a mathematical system for calculating optimal routes',
+      D: 'the historical layout of a city as recorded in planning documents',
+    },
+    answer: 'B',
+    explanation: 'The uncle\'s actual method — signs, traffic flow, asking people — shows that "logic" here means readable cues embedded in any organised human environment, not formal reasoning.',
+    // Level:4, Taxonomy:Abstract, Tag:diction-contextual, Triage:Return
+  },
+  {
+    id: 19, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: 'Which of the following BEST states the main idea of Passage 2?',
+    options: {
+      A: 'intellectual theories are more reliable than practical skills for navigation',
+      B: 'a person\'s stated philosophy may conceal the actual reason for their behaviour',
+      C: 'people who refuse to drive are often skilled pedestrians instead',
+      D: 'maps are genuinely harmful to direct perception of the world',
+    },
+    answer: 'B',
+    explanation: 'The passage uses the uncle\'s map theory as a case study in motivated reasoning — constructing a philosophically satisfying explanation that conceals a simpler, less flattering truth. The navigation skill is real but secondary.',
+    // Level:5, Taxonomy:Logical, Tag:main-idea, Triage:Return
+  },
+  {
+    id: 20, subject: 'English',
+    passageTitle: 'The Map Theory',
+    passage: P2,
+    text: '"Which his wife disclosed to me some years after his death" — this clause functions to:',
+    options: {
+      A: 'establish the writer as a reliable narrator with privileged information',
+      B: 'suggest the uncle was deliberately dishonest with his family',
+      C: 'indicate the writer was not close to the uncle during his lifetime',
+      D: 'imply the wife was resentful of the map theory during the marriage',
+    },
+    answer: 'A',
+    explanation: 'The detail "after his death" signals that this information was withheld during the uncle\'s lifetime, adding credibility to the disclosure. It positions the writer as someone with access to the fuller, post-mortem truth.',
+    // Level:4, Taxonomy:Logical, Tag:narrative-voice, Triage:Return
+  },
+
+  /* ── Phonetics & Stress  Q21–32 ── */
+  {
+    id: 21, subject: 'English',
+    text: 'Which word has primary stress on the THIRD syllable?',
+    options: {
+      A: 'PERsonnel',
+      B: 'perSONnel',
+      C: 'perSONnel (variant)',
+      D: 'personNEL',
+    },
+    answer: 'D',
+    explanation: '"Personnel" carries primary stress on the final (third) syllable: per-son-NEL. This distinguishes it from "personal" (PER-son-al), a common confusion point.',
+    // Level:3, Taxonomy:Administrative, Tag:word-stress, Triage:Return
+  },
+  {
+    id: 22, subject: 'English',
+    text: 'In which word is the underlined letter silent? Choose the correct pair.',
+    options: {
+      A: 'kn-ife — the n is silent',
+      B: 'kn-ife — the k is silent',
+      C: 'kn-ife — the e is silent',
+      D: 'kn-ife — no letter is silent',
+    },
+    answer: 'B',
+    explanation: 'In "knife," the initial k is silent — pronunciation is /naɪf/. The "kn" cluster in English always silences the k: kneel, knock, knight, knot.',
+    // Level:2, Taxonomy:Administrative, Tag:silent-letters, Triage:Sprint
+  },
+  {
+    id: 23, subject: 'English',
+    text: 'How many phonemes does the word "through" contain?',
+    options: { A: '7', B: '5', C: '3', D: '4' },
+    answer: 'C',
+    explanation: '"Through" = /θ/ /r/ /uː/ — three phonemes. The seven letters compress into three sounds: "th" = /θ/, "r" = /r/, "ough" = /uː/.',
+    // Level:3, Taxonomy:Administrative, Tag:phoneme-count, Triage:Return
+  },
+  {
+    id: 24, subject: 'English',
+    text: 'Which word contains the vowel sound /ɜː/ as in "bird"?',
+    options: { A: 'hear', B: 'hurt', C: 'hare', D: 'here' },
+    answer: 'B',
+    explanation: '"Hurt" = /hɜːt/ — contains the central long vowel /ɜː/. "Hear" = /hɪə/, "hare" = /heə/, "here" = /hɪə/. All four spellings produce different vowel sounds.',
+    // Level:3, Taxonomy:Administrative, Tag:vowel-sounds, Triage:Return
+  },
+  {
+    id: 25, subject: 'English',
+    text: 'The word "import" shifts stress based on word class. When used as a NOUN, stress falls on:',
+    options: { A: 'the second syllable: im-PORT', B: 'the first syllable: IM-port', C: 'both syllables equally', D: 'neither — both forms stress the same syllable' },
+    answer: 'B',
+    explanation: 'Classic stress-shift pair: noun = IM-port (first syllable); verb = im-PORT (second syllable). Same pattern as EXport/exPORT, PROtest/proTEST.',
+    // Level:3, Taxonomy:Administrative, Tag:stress-shift, Triage:Sprint
+  },
+  {
+    id: 26, subject: 'English',
+    text: 'Identify the word with the diphthong /eɪ/:',
+    options: { A: 'bit', B: 'bait', C: 'boot', D: 'bought' },
+    answer: 'B',
+    explanation: '"Bait" = /beɪt/ — contains the /eɪ/ diphthong (as in "day," "late," "train"). "Bit" = /ɪ/, "boot" = /uː/, "bought" = /ɔː/.',
+    // Level:2, Taxonomy:Administrative, Tag:diphthongs, Triage:Sprint
+  },
+  {
+    id: 27, subject: 'English',
+    text: 'Which pair are NOT homophones?',
+    options: { A: 'brake / break', B: 'bare / bear', C: 'stare / stair', D: 'cite / site / sight' },
+    answer: 'D',
+    explanation: '"Cite," "site," and "sight" are a homophone TRIPLET, not a pair. The question asks for the non-pair. Options A, B, and C are all standard homophone pairs.',
+    // Level:3, Taxonomy:Logical, Tag:homophones, Triage:Return
+  },
+  {
+    id: 28, subject: 'English',
+    text: 'How many syllables does "deteriorate" have?',
+    options: { A: '4', B: '5', C: '6', D: '3' },
+    answer: 'B',
+    explanation: 'de-te-ri-o-rate = 5 syllables. A common error is collapsing "ri-o" into one syllable in speech, yielding 4.',
+    // Level:3, Taxonomy:Administrative, Tag:syllable-count, Triage:Return
+  },
+  {
+    id: 29, subject: 'English',
+    text: 'The phoneme /ʃ/ appears in which word?',
+    options: { A: 'chair', B: 'cheese', C: 'shore', D: 'church' },
+    answer: 'C',
+    explanation: '/ʃ/ is the voiceless palato-alveolar fricative — the "sh" sound. "Shore" = /ʃɔː/. "Chair," "cheese," and "church" all contain /tʃ/ (the affricate), not /ʃ/.',
+    // Level:3, Taxonomy:Administrative, Tag:phonemes, Triage:Return
+  },
+  {
+    id: 30, subject: 'English',
+    text: 'Which word contains a TRIPHTHONG (three vowel sounds in one syllable)?',
+    options: { A: 'fire', B: 'flat', C: 'free', D: 'fare' },
+    answer: 'A',
+    explanation: '"Fire" = /faɪə/ — the vowels /a/, /ɪ/, and /ə/ blend within one syllable, forming a triphthong. "Flat," "free," and "fare" each contain a single vowel or diphthong.',
+    // Level:4, Taxonomy:Administrative, Tag:triphthong, Triage:Return
+  },
+  {
+    id: 31, subject: 'English',
+    text: 'In the sentence "He REFUSED to leave," the stress on "refused" indicates:',
+    options: {
+      A: 'it is being used as a noun referring to waste material',
+      B: 'it is being used as a verb meaning to decline',
+      C: 'the speaker is uncertain whether he refused',
+      D: 'the stress pattern is irregular and carries no meaning',
+    },
+    answer: 'B',
+    explanation: 'RE-fuse (noun) = waste, rubbish. re-FUSE (verb) = to decline. Stress on the second syllable marks the verb form. This is the classic noun/verb stress-shift tested by JAMB.',
+    // Level:3, Taxonomy:Logical, Tag:stress-shift, Triage:Sprint
+  },
+  {
+    id: 32, subject: 'English',
+    text: 'Which word contains the consonant cluster /str/?',
+    options: { A: 'scatter', B: 'stream', C: 'sister', D: 'sector' },
+    answer: 'B',
+    explanation: '"Stream" begins with /str/ — three consecutive consonant sounds. "Scatter" has /sk/, "sister" has no initial cluster, "sector" has /s/ then /k/ separated by a vowel.',
+    // Level:2, Taxonomy:Administrative, Tag:consonant-clusters, Triage:Sprint
+  },
+
+  /* ── Grammar, Vocabulary & Usage  Q33–55 ── */
+  {
+    id: 33, subject: 'English',
+    text: 'Choose the sentence with correct subject-verb agreement:',
+    options: {
+      A: 'The number of students in the class are increasing.',
+      B: 'A number of students in the class is absent today.',
+      C: 'The number of students in the class is increasing.',
+      D: 'A number of students in the class are absent today.',
+    },
+    answer: 'C',
+    explanation: '"The number" takes a singular verb (the number IS). "A number" takes a plural verb (a number ARE). Both C and D are correct — but the question asks for one. C is the safer, cleaner answer for standard JAMB concord.',
+    // NOTE: C is the primary target answer — the number + singular.
+    // Level:4, Taxonomy:Logical, Tag:concord-number, Triage:Return
+  },
+  {
+    id: 34, subject: 'English',
+    text: 'Identify the sentence that contains a misplaced modifier:',
+    options: {
+      A: 'Running to catch the bus, she dropped her bag.',
+      B: 'She served the guests biscuits on a silver tray.',
+      C: 'Walking through the park, the flowers looked beautiful.',
+      D: 'He repaired the bicycle that was broken in the garage.',
+    },
+    answer: 'C',
+    explanation: '"Walking through the park" implies a subject who is walking — but the main clause\'s subject is "the flowers," which cannot walk. The modifier is dangling. In D, the relative clause ambiguously modifies "bicycle" or "broken" — but C is the clearest error.',
+    // Level:4, Taxonomy:Logical, Tag:dangling-modifier, Triage:Return
+  },
+  {
+    id: 35, subject: 'English',
+    text: 'Choose the option that correctly uses the subjunctive mood:',
+    options: {
+      A: 'I suggest that he goes to the hospital immediately.',
+      B: 'I suggest that he go to the hospital immediately.',
+      C: 'I suggest that he will go to the hospital immediately.',
+      D: 'I suggest that he had gone to the hospital immediately.',
+    },
+    answer: 'B',
+    explanation: 'After verbs of suggestion, demand, or recommendation, the subjunctive takes the base form of the verb without inflection: "he go" not "he goes." This is the mandative subjunctive.',
+    // Level:3, Taxonomy:Administrative, Tag:subjunctive, Triage:Return
+  },
+  {
+    id: 36, subject: 'English',
+    text: 'Which sentence correctly uses a SEMICOLON?',
+    options: {
+      A: 'She studied all night; because the exam was difficult.',
+      B: 'He arrived late; however, he still completed the test.',
+      C: 'The market was busy; with traders and customers everywhere.',
+      D: 'She passed the exam; scoring ninety percent overall.',
+    },
+    answer: 'B',
+    explanation: 'A semicolon correctly joins two independent clauses, especially with a conjunctive adverb like "however." Options A, C, and D all use semicolons before dependent elements — which is incorrect.',
+    // Level:3, Taxonomy:Administrative, Tag:punctuation-semicolon, Triage:Return
+  },
+  {
+    id: 37, subject: 'English',
+    text: 'The word "perspicacious" most nearly means:',
+    options: {
+      A: 'excessively talkative and socially confident',
+      B: 'having keen insight and clear-sighted judgement',
+      C: 'physically imposing and difficult to intimidate',
+      D: 'morally upright and resistant to corruption',
+    },
+    answer: 'B',
+    explanation: '"Perspicacious" derives from Latin perspicere (to see through clearly) — it means having sharp discernment or penetrating insight. Not to be confused with "perspicuous" (clear in expression).',
+    // Level:4, Taxonomy:Administrative, Tag:vocabulary, Triage:Return
+  },
+  {
+    id: 38, subject: 'English',
+    text: 'Choose the option with correct use of the apostrophe:',
+    options: {
+      A: 'The childrens\' books were scattered across the floor.',
+      B: 'The children\'s books were scattered across the floor.',
+      C: 'The childrens books were scattered across the floor.',
+      D: 'The children\'s\' books were scattered across the floor.',
+    },
+    answer: 'B',
+    explanation: '"Children" is an irregular plural (not ending in s), so the possessive is formed by adding \'s: children\'s. Regular plurals ending in s take the apostrophe after the s: boys\'.',
+    // Level:3, Taxonomy:Administrative, Tag:apostrophe, Triage:Sprint
+  },
+  {
+    id: 39, subject: 'English',
+    text: 'Identify the figure of speech in: "The road stretched endlessly, a grey ribbon unspooling into the horizon."',
+    options: {
+      A: 'personification — the road is given human characteristics',
+      B: 'metaphor — the road is directly identified as a ribbon',
+      C: 'simile — the road is compared to a ribbon using "like"',
+      D: 'synecdoche — the ribbon stands for the entire landscape',
+    },
+    answer: 'B',
+    explanation: '"A grey ribbon" directly equates the road with a ribbon without "like" or "as" — a metaphor. "Unspooling" extends the metaphor. Personification would require human attributes; there are none here.',
+    // Level:2, Taxonomy:Administrative, Tag:figures-of-speech, Triage:Sprint
+  },
+  {
+    id: 40, subject: 'English',
+    text: 'Convert to indirect speech: The teacher said, "You must submit your assignments by Friday."',
+    options: {
+      A: 'The teacher said that we must submit our assignments by Friday.',
+      B: 'The teacher told them that they had to submit their assignments by Friday.',
+      C: 'The teacher said that you must submit your assignments by Friday.',
+      D: 'The teacher told us we should be submitting assignments by Friday.',
+    },
+    answer: 'B',
+    explanation: 'Backshift: "must" → "had to." Pronoun shift: "you" → "they" (third person). Time expression: "by Friday" remains if the day is still in the future, but pronouns and modality must change. B handles all changes correctly.',
+    // Level:4, Taxonomy:Administrative, Tag:reported-speech, Triage:Return
+  },
+  {
+    id: 41, subject: 'English',
+    text: 'Which option correctly fills the gap: "She is one of those students who _____ always on time."',
+    options: { A: 'is', B: 'was', C: 'are', D: 'were' },
+    answer: 'C',
+    explanation: 'The relative clause "who are always on time" refers to "those students" (plural antecedent), not to "she." The verb must agree with "students": are. This is the "one of those who" trap.',
+    // Level:4, Taxonomy:Logical, Tag:concord-relative, Triage:Return
+  },
+  {
+    id: 42, subject: 'English',
+    text: 'The word "sanguine" means:',
+    options: {
+      A: 'pessimistic and prone to expecting the worst outcome',
+      B: 'optimistic and positive about a future outcome',
+      C: 'aggressive and quick to express strong emotions',
+      D: 'cautious and unwilling to commit to a position',
+    },
+    answer: 'B',
+    explanation: '"Sanguine" (from Latin sanguis, blood) originally referred to the blood humour associated with cheerfulness. It now means optimistic, especially about an outcome. Its similarity to "sanguinary" (bloodthirsty) makes it a trap.',
+    // Level:3, Taxonomy:Administrative, Tag:vocabulary, Triage:Sprint
+  },
+  {
+    id: 43, subject: 'English',
+    text: 'Identify the type of clause: "Whatever he decides, the committee will proceed."',
+    options: {
+      A: 'adverbial clause of condition introduced by "whatever"',
+      B: 'nominal relative clause functioning as subject of "decides"',
+      C: 'concessive adverbial clause introduced by "whatever"',
+      D: 'relative clause modifying an unnamed antecedent noun',
+    },
+    answer: 'C',
+    explanation: '"Whatever he decides" is a concessive adverbial clause — it acknowledges a range of possibilities while asserting the main clause holds regardless. It functions like "no matter what he decides."',
+    // Level:5, Taxonomy:Administrative, Tag:clause-types, Triage:Pro-Ceiling
+  },
+  {
+    id: 44, subject: 'English',
+    text: 'Choose the sentence that correctly uses "who" vs "whom":',
+    options: {
+      A: 'Who did you speak to about the matter?',
+      B: 'Whom called the office this morning?',
+      C: 'To whom should I address this letter?',
+      D: 'She is the person who I recommended for the post.',
+    },
+    answer: 'C',
+    explanation: '"Whom" is used as the object of a preposition ("to whom"). A is acceptable in informal usage but incorrect formally. B is wrong — "whom" cannot be a subject. D requires "whom" (object of "recommended").',
+    // Level:3, Taxonomy:Administrative, Tag:who-whom, Triage:Return
+  },
+  {
+    id: 45, subject: 'English',
+    text: '"To burn the candle at both ends" means:',
+    options: {
+      A: 'to work with great enthusiasm and visible passion',
+      B: 'to exhaust oneself by working excessively hard or late',
+      C: 'to illuminate a situation from two opposing perspectives',
+      D: 'to waste resources without achieving any clear result',
+    },
+    answer: 'B',
+    explanation: 'The idiom refers to overextending oneself — staying up late and rising early, or pursuing too many activities simultaneously until health or energy is depleted.',
+    // Level:2, Taxonomy:Administrative, Tag:idioms, Triage:Sprint
+  },
+  {
+    id: 46, subject: 'English',
+    text: 'Which sentence contains a TAUTOLOGY?',
+    options: {
+      A: 'She returned the book back to the library.',
+      B: 'He arrived before the meeting started.',
+      C: 'The report confirmed what we had suspected.',
+      D: 'They finished the project ahead of schedule.',
+    },
+    answer: 'A',
+    explanation: '"Returned... back" is a tautology — "returned" already implies going back; "back" is redundant. Other common tautologies: "end result," "free gift," "past history."',
+    // Level:3, Taxonomy:Logical, Tag:tautology, Triage:Sprint
+  },
+  {
+    id: 47, subject: 'English',
+    text: 'Identify the rhetorical device: "Ask not what your country can do for you — ask what you can do for your country."',
+    options: {
+      A: 'chiasmus — the grammatical structure is inverted in the second clause',
+      B: 'anaphora — the same phrase opens both clauses',
+      C: 'antithesis — two opposing ideas are placed in parallel structure',
+      D: 'epistrophe — the same phrase ends both clauses',
+    },
+    answer: 'A',
+    explanation: 'The sentence reverses the grammatical and semantic elements: A→B becomes B→A. "What your country can do for you" inverts to "what you can do for your country." This reversal structure is chiasmus.',
+    // Level:5, Taxonomy:Abstract, Tag:rhetorical-devices, Triage:Pro-Ceiling
+  },
+  {
+    id: 48, subject: 'English',
+    text: 'Choose the correct option: "The data _____ been analysed by the research team."',
+    options: { A: 'has', B: 'have', C: 'is', D: 'was' },
+    answer: 'B',
+    explanation: '"Data" is the plural of "datum" — in formal and academic English, it takes a plural verb: "the data have been." In informal usage "data has" is common, but JAMB follows formal convention.',
+    // Level:4, Taxonomy:Logical, Tag:concord-latin-plurals, Triage:Return
+  },
+  {
+    id: 49, subject: 'English',
+    text: 'The antonym of "garrulous" is:',
+    options: {
+      A: 'verbose and prone to lengthy explanation',
+      B: 'taciturn and habitually saying very little',
+      C: 'eloquent and persuasive in formal speech',
+      D: 'boisterous and loud in social situations',
+    },
+    answer: 'B',
+    explanation: '"Garrulous" = excessively talkative. Its antonym is "taciturn" = habitually silent. "Verbose" is a near-synonym of garrulous, not its antonym.',
+    // Level:3, Taxonomy:Administrative, Tag:antonyms, Triage:Sprint
+  },
+  {
+    id: 50, subject: 'English',
+    text: 'Which option correctly completes the analogy: Playwright : Drama :: Composer : ___',
+    options: { A: 'music', B: 'orchestra', C: 'symphony', D: 'conductor' },
+    answer: 'C',
+    explanation: 'A playwright creates a drama (the specific work); a composer creates a symphony (the specific work). "Music" is too broad; "orchestra" and "conductor" are wrong parts of the relationship.',
+    // Level:3, Taxonomy:Logical, Tag:analogies, Triage:Sprint
+  },
+  {
+    id: 51, subject: 'English',
+    text: 'Choose the option in which "lay" is used correctly:',
+    options: {
+      A: 'The cat lay the mouse at her feet as a gift.',
+      B: 'Please lay down and rest for a while.',
+      C: 'She lay awake all night thinking about the interview.',
+      D: 'The workers lay the bricks in the wrong pattern.',
+    },
+    answer: 'C',
+    explanation: '"Lay" is the past tense of "lie" (to recline): "she lay awake" ✓. In A, D — "lay" as a transitive verb (to place) requires an object and should use "laid" in past tense. In B — correct command form would be "lie down."',
+    // Level:4, Taxonomy:Logical, Tag:lie-lay, Triage:Return
+  },
+  {
+    id: 52, subject: 'English',
+    text: 'Identify the figure of speech: "The stars winked at us through the clouds."',
+    options: {
+      A: 'metaphor — stars are compared directly to eyes',
+      B: 'personification — stars are given the human action of winking',
+      C: 'hyperbole — the winking is an exaggeration of starlight',
+      D: 'oxymoron — winking and clouds are contradictory images',
+    },
+    answer: 'B',
+    explanation: '"Winked" is a human action attributed to stars — personification. A metaphor would require a direct equation ("the stars are eyes"). The figure here lies in the verb, not a comparison.',
+    // Level:2, Taxonomy:Administrative, Tag:figures-of-speech, Triage:Sprint
+  },
+  {
+    id: 53, subject: 'English',
+    text: 'Choose the word closest in meaning to "equivocal":',
+    options: {
+      A: 'precise and leaving no room for alternative interpretation',
+      B: 'ambiguous and open to more than one interpretation',
+      C: 'fair and treating all parties with equal consideration',
+      D: 'emotional and difficult to reason with under pressure',
+    },
+    answer: 'B',
+    explanation: '"Equivocal" = having multiple possible meanings; deliberately ambiguous. Its antonym is "unequivocal" (leaving no doubt). Not related to "equal" despite the shared Latin root.',
+    // Level:3, Taxonomy:Administrative, Tag:vocabulary, Triage:Sprint
+  },
+  {
+    id: 54, subject: 'English',
+    text: '"His speech was full of sound and fury, signifying nothing." This is an example of:',
+    options: {
+      A: 'litotes — an understatement achieved through negation',
+      B: 'zeugma — one verb governing two objects with different senses',
+      C: 'allusion — a reference to a well-known text or cultural source',
+      D: 'assonance — repetition of identical vowel sounds across words',
+    },
+    answer: 'C',
+    explanation: 'This is a direct allusion to Shakespeare\'s Macbeth (Act 5, Scene 5). An allusion is a reference — explicit or indirect — to another text, person, or event. The figure lies in the reference, not in the grammar.',
+    // Level:4, Taxonomy:Abstract, Tag:allusion, Triage:Return
+  },
+  {
+    id: 55, subject: 'English',
+    text: 'Which sentence uses "effect" correctly as a VERB?',
+    options: {
+      A: 'The medication began to effect her mood negatively.',
+      B: 'The new policy will effect significant changes in the system.',
+      C: 'His words were designed to effect an emotional response.',
+      D: 'She could not effect whether the outcome changed.',
+    },
+    answer: 'B',
+    explanation: '"Effect" as a verb means to bring about or cause (something): "to effect a change." "Affect" is the verb meaning to influence. D is grammatically incorrect regardless. A and C use "effect" where "affect" is intended.',
+    // Level:4, Taxonomy:Logical, Tag:affect-effect, Triage:Return
+  },
+
+
+/* ─────────────────────────────────────────────────────────
+   MATHEMATICS  Q56 – Q90  (35 questions)
+───────────────────────────────────────────────────────── */
+
+  /* Binary Operations */
+  {
+    id: 56, subject: 'Mathematics',
+    text: 'An operation ⊗ is defined by a⊗b = a² + b − a. Find the identity element.',
+    options: { A: '0', B: '1', C: 'a', D: 'No identity exists' },
+    answer: 'D',
+    explanation: 'Need a⊗e = a: a²+e−a = a → e = 2a−a². This depends on a — no single constant satisfies it for all a. No universal identity element exists.',
+    // Level:5, Taxonomy:Logical, Tag:binary-ops-identity, Triage:Return
+  },
+  {
+    id: 57, subject: 'Mathematics',
+    text: 'If a⊕b = 2ab − a − b, find 3⊕4.',
+    options: { A: '17', B: '20', C: '13', D: '24' },
+    answer: 'A',
+    explanation: '3⊕4 = 2(3)(4) − 3 − 4 = 24 − 7 = 17.',
+    // Level:2, Taxonomy:Mathematical, Tag:binary-ops, Triage:Sprint
+  },
+
+  /* Logic */
+  {
+    id: 58, subject: 'Mathematics',
+    text: 'Which of the following is the contrapositive of "If it rains, the ground is wet"?',
+    options: {
+      A: 'If it does not rain, the ground is not wet.',
+      B: 'If the ground is wet, it is raining.',
+      C: 'If the ground is not wet, it did not rain.',
+      D: 'If it rains, the ground is not wet.',
+    },
+    answer: 'C',
+    explanation: 'Contrapositive of p→q is ~q→~p. Original: "rain → wet ground." Contrapositive: "not wet ground → not raining." Option A is the inverse; B is the converse; D negates the conclusion only.',
+    // Level:3, Taxonomy:Logical, Tag:logic-contrapositive, Triage:Return
+  },
+
+  /* Sets */
+  {
+    id: 59, subject: 'Mathematics',
+    text: 'U = {1,2,3,4,5,6,7,8}, A = {1,3,5,7}, B = {2,3,6,7}. Find (A∪B)\'.',
+    options: { A: '{1,5}', B: '{4,8}', C: '{3,7}', D: '{2,6}' },
+    answer: 'B',
+    explanation: 'A∪B = {1,2,3,5,6,7}. (A∪B)\' = U − (A∪B) = {4,8}.',
+    // Level:3, Taxonomy:Mathematical, Tag:sets-complement, Triage:Return
+  },
+  {
+    id: 60, subject: 'Mathematics',
+    text: 'In a group of 40, 25 play football, 20 play basketball, and 10 play both. How many play neither?',
+    options: { A: '5', B: '10', C: '15', D: '0' },
+    answer: 'A',
+    explanation: 'n(F∪B) = 25+20−10 = 35. Neither = 40−35 = 5.',
+    // Level:2, Taxonomy:Mathematical, Tag:sets-two, Triage:Sprint
+  },
+
+  /* Quadratics & Polynomials */
+  {
+    id: 61, subject: 'Mathematics',
+    text: 'Find the range of values of x for which x² − 5x + 6 < 0.',
+    options: { A: 'x < 2 or x > 3', B: '2 < x < 3', C: 'x > 3', D: 'x < 2' },
+    answer: 'B',
+    explanation: 'Factor: (x−2)(x−3) < 0. The parabola opens upward; it is negative between its roots. Solution: 2 < x < 3.',
+    // Level:4, Taxonomy:Mathematical, Tag:quadratic-inequality, Triage:Return
+  },
+  {
+    id: 62, subject: 'Mathematics',
+    text: 'If the roots of 2x² + px + q = 0 are 3 and −½, find p and q.',
+    options: { A: 'p = −5, q = −3', B: 'p = 5, q = −3', C: 'p = −5, q = 3', D: 'p = 5, q = 3' },
+    answer: 'A',
+    explanation: 'For 2x²+px+q=0: sum of roots = −p/2 = 3+(−½) = 5/2 → p = −5. Product = q/2 = 3×(−½) = −3/2 → q = −3.',
+    // Level:4, Taxonomy:Mathematical, Tag:quadratic-roots, Triage:Return
+  },
+  {
+    id: 63, subject: 'Mathematics',
+    text: 'f(x) = x³ − 2x² − 5x + 6. Given (x−1) is a factor, factorise fully.',
+    options: { A: '(x−1)(x−3)(x+2)', B: '(x−1)(x+3)(x−2)', C: '(x+1)(x−3)(x−2)', D: '(x−1)(x²−x−6)' },
+    answer: 'A',
+    explanation: 'Divide by (x−1): x³−2x²−5x+6 ÷ (x−1) = x²−x−6 = (x−3)(x+2). Full factorisation: (x−1)(x−3)(x+2).',
+    // Level:4, Taxonomy:Mathematical, Tag:factor-theorem, Triage:Return
+  },
+
+  /* Indices & Logarithms */
+  {
+    id: 64, subject: 'Mathematics',
+    text: 'Solve: 2^(x+1) = 5^(x−1). Give answer in terms of log.',
+    options: {
+      A: 'x = (log5 + log2)/(log5 − log2)',
+      B: 'x = (log5 − log2)/(log5 + log2)',
+      C: 'x = log5/log2',
+      D: 'x = (log2 + log5)/(log2 − log5)',
+    },
+    answer: 'A',
+    explanation: '(x+1)log2 = (x−1)log5. x·log2+log2 = x·log5−log5. x(log2−log5) = −log5−log2. x = (−log5−log2)/(log2−log5) = (log5+log2)/(log5−log2).',
+    // Level:5, Taxonomy:Mathematical, Tag:exponential-equation, Triage:Pro-Ceiling
+  },
+  {
+    id: 65, subject: 'Mathematics',
+    text: 'Simplify: log₆ 4 + log₆ 9.',
+    options: { A: 'log₆ 36', B: '2', C: 'log₆ 13', D: '1' },
+    answer: 'B',
+    explanation: 'log₆ 4 + log₆ 9 = log₆ (4×9) = log₆ 36 = log₆ 6² = 2.',
+    // Level:2, Taxonomy:Mathematical, Tag:logarithm-laws, Triage:Sprint
+  },
+
+  /* Sequences */
+  {
+    id: 66, subject: 'Mathematics',
+    text: 'The 2nd term of a GP is 6 and the 5th term is 48. Find the first term.',
+    options: { A: '2', B: '3', C: '4', D: '6' },
+    answer: 'B',
+    explanation: 'T₂ = ar = 6. T₅ = ar⁴ = 48. Dividing: r³ = 8 → r = 2. a = 6/2 = 3.',
+    // Level:3, Taxonomy:Mathematical, Tag:gp-nth-term, Triage:Return
+  },
+  {
+    id: 67, subject: 'Mathematics',
+    text: 'The sum of the first n terms of an AP is Sₙ = 3n² + 2n. Find the 10th term.',
+    options: { A: '57', B: '59', C: '55', D: '61' },
+    answer: 'B',
+    explanation: 'T₁₀ = S₁₀ − S₉. S₁₀ = 3(100)+2(10) = 320. S₉ = 3(81)+2(9) = 261. T₁₀ = 320−261 = 59.',
+    // Level:4, Taxonomy:Mathematical, Tag:ap-sum-formula, Triage:Return
+  },
+
+  /* Differentiation */
+  {
+    id: 68, subject: 'Mathematics',
+    text: 'Find dy/dx if y = sin(3x²).',
+    options: { A: 'cos(3x²)', B: '6x cos(3x²)', C: '3x cos(3x²)', D: '6x sin(3x²)' },
+    answer: 'B',
+    explanation: 'Chain rule: dy/dx = cos(3x²) × d/dx(3x²) = cos(3x²) × 6x = 6x cos(3x²).',
+    // Level:4, Taxonomy:Mathematical, Tag:differentiation-chain, Triage:Return
+  },
+  {
+    id: 69, subject: 'Mathematics',
+    text: 'A curve has equation y = x³ − 6x + 2. At which x-values are the stationary points?',
+    options: { A: 'x = 2 and x = −2', B: 'x = √2 and x = −√2', C: 'x = 6 and x = 0', D: 'x = 1 and x = −1' },
+    answer: 'B',
+    explanation: 'dy/dx = 3x²−6 = 0 → x² = 2 → x = ±√2.',
+    // Level:4, Taxonomy:Mathematical, Tag:differentiation-stationary, Triage:Return
+  },
+
+  /* Integration */
+  {
+    id: 70, subject: 'Mathematics',
+    text: 'Evaluate ∫₀¹ (4x³ − 2x) dx.',
+    options: { A: '1', B: '2', C: '0', D: '3' },
+    answer: 'C',
+    explanation: '[x⁴ − x²]₀¹ = (1−1) − (0−0) = 0.',
+    // Level:3, Taxonomy:Mathematical, Tag:integration-definite, Triage:Sprint
+  },
+  {
+    id: 71, subject: 'Mathematics',
+    text: 'Find the area enclosed between y = x² and y = x.',
+    options: { A: '1/6', B: '1/3', C: '1/2', D: '1/4' },
+    answer: 'A',
+    explanation: 'Intersections: x²=x → x=0 or x=1. Area = ∫₀¹ (x−x²) dx = [x²/2 − x³/3]₀¹ = ½ − ⅓ = 1/6.',
+    // Level:5, Taxonomy:Mathematical, Tag:integration-area, Triage:Return
+  },
+
+  /* Probability */
+  {
+    id: 72, subject: 'Mathematics',
+    text: 'A fair die is rolled twice. P(sum = 7) =',
+    options: { A: '1/6', B: '1/9', C: '7/36', D: '5/36' },
+    answer: 'A',
+    explanation: 'Pairs summing to 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 pairs. P = 6/36 = 1/6.',
+    // Level:3, Taxonomy:Mathematical, Tag:probability-sample-space, Triage:Return
+  },
+  {
+    id: 73, subject: 'Mathematics',
+    text: 'In how many ways can the letters of the word MAMA be arranged?',
+    options: { A: '24', B: '12', C: '6', D: '4' },
+    answer: 'C',
+    explanation: 'MAMA has 4 letters with M repeated twice and A repeated twice. Arrangements = 4!/(2!×2!) = 24/4 = 6.',
+    // Level:3, Taxonomy:Mathematical, Tag:permutations-repeated, Triage:Return
+  },
+
+  /* Matrices */
+  {
+    id: 74, subject: 'Mathematics',
+    text: 'If A = [[1,2],[3,4]] and B = [[2,0],[1,3]], find AB.',
+    options: {
+      A: '[[4,6],[10,12]]',
+      B: '[[4,6],[10,12]]',
+      C: '[[2,4],[3,12]]',
+      D: '[[3,2],[7,4]]',
+    },
+    answer: 'A',
+    explanation: 'AB: (1×2+2×1, 1×0+2×3) = (4,6). (3×2+4×1, 3×0+4×3) = (10,12). AB = [[4,6],[10,12]].',
+    // Level:3, Taxonomy:Mathematical, Tag:matrices-multiplication, Triage:Return
+  },
+
+  /* Coordinate Geometry */
+  {
+    id: 75, subject: 'Mathematics',
+    text: 'Find the equation of the circle with centre (3,−2) and radius 5.',
+    options: {
+      A: '(x−3)² + (y+2)² = 25',
+      B: '(x+3)² + (y−2)² = 25',
+      C: '(x−3)² + (y−2)² = 5',
+      D: '(x+3)² + (y+2)² = 25',
+    },
+    answer: 'A',
+    explanation: 'Standard form: (x−h)²+(y−k)²=r². Centre (3,−2): (x−3)²+(y−(−2))²=25 → (x−3)²+(y+2)²=25.',
+    // Level:2, Taxonomy:Mathematical, Tag:circle-equation, Triage:Sprint
+  },
+  {
+    id: 76, subject: 'Mathematics',
+    text: 'The midpoint of the line segment joining A(−2, 5) and B(4, −1) is:',
+    options: { A: '(1, 2)', B: '(2, 4)', C: '(3, 2)', D: '(1, 4)' },
+    answer: 'A',
+    explanation: 'Midpoint = ((−2+4)/2, (5+(−1))/2) = (2/2, 4/2) = (1, 2).',
+    // Level:1, Taxonomy:Mathematical, Tag:midpoint, Triage:Sprint
+  },
+
+  /* Trigonometry */
+  {
+    id: 77, subject: 'Mathematics',
+    text: 'Solve for x in [0°, 360°]: 2sin²x − sinx − 1 = 0.',
+    options: {
+      A: '90°, 210°, 330°',
+      B: '30°, 150°, 270°',
+      C: '90°, 270°, 330°',
+      D: '30°, 210°, 270°',
+    },
+    answer: 'A',
+    explanation: 'Let s = sinx: 2s²−s−1=0 → (2s+1)(s−1)=0 → s=1 or s=−½. sinx=1: x=90°. sinx=−½: x=210°, 330°. Solution: 90°, 210°, 330°.',
+    // Level:5, Taxonomy:Mathematical, Tag:trig-equation, Triage:Return
+  },
+  {
+    id: 78, subject: 'Mathematics',
+    text: 'Prove that sin²θ + cos²θ = 1 is used to show that tan²θ + 1 equals:',
+    options: { A: 'sec²θ', B: 'cosec²θ', C: 'cot²θ + 1', D: 'cos²θ' },
+    answer: 'A',
+    explanation: 'Divide sin²θ+cos²θ=1 by cos²θ: tan²θ+1 = sec²θ. This is one of the three standard Pythagorean identities.',
+    // Level:2, Taxonomy:Mathematical, Tag:trig-identities, Triage:Sprint
+  },
+
+  /* Statistics */
+  {
+    id: 79, subject: 'Mathematics',
+    text: 'The scores of 7 students are: 5, 8, 7, 12, 6, 9, 8. Find the median.',
+    options: { A: '7', B: '8', C: '9', D: '6' },
+    answer: 'B',
+    explanation: 'Arrange in order: 5, 6, 7, 8, 8, 9, 12. Middle value (4th of 7) = 8.',
+    // Level:2, Taxonomy:Mathematical, Tag:statistics-median, Triage:Sprint
+  },
+  {
+    id: 80, subject: 'Mathematics',
+    text: 'If P(A) = 0.3, P(B) = 0.4, and A and B are mutually exclusive, find P(A∪B).',
+    options: { A: '0.12', B: '0.58', C: '0.70', D: '0.42' },
+    answer: 'C',
+    explanation: 'Mutually exclusive: P(A∩B)=0. P(A∪B) = P(A)+P(B) = 0.3+0.4 = 0.7.',
+    // Level:2, Taxonomy:Mathematical, Tag:probability-mutually-exclusive, Triage:Sprint
+  },
+
+  /* Surds */
+  {
+    id: 81, subject: 'Mathematics',
+    text: 'Simplify: (√3 + √2)(√3 − √2).',
+    options: { A: '5', B: '1', C: '√5', D: '√6' },
+    answer: 'B',
+    explanation: '(a+b)(a−b) = a²−b². (√3)²−(√2)² = 3−2 = 1.',
+    // Level:1, Taxonomy:Mathematical, Tag:surds-difference-squares, Triage:Sprint
+  },
+
+  /* Binomial */
+  {
+    id: 82, subject: 'Mathematics',
+    text: 'Find the 4th term in the expansion of (2x − 1)⁶.',
+    options: { A: '−160x³', B: '160x³', C: '−80x³', D: '80x³' },
+    answer: 'A',
+    explanation: 'General term: C(6,r)(2x)^(6-r)(−1)^r. 4th term: r=3. C(6,3)(2x)³(−1)³ = 20×8x³×(−1) = −160x³.',
+    // Level:4, Taxonomy:Mathematical, Tag:binomial-expansion, Triage:Return
+  },
+
+  /* Partial Fractions */
+  {
+    id: 83, subject: 'Mathematics',
+    text: 'Express (4x+1)/((x+1)(x−1)) in partial fractions.',
+    options: {
+      A: '5/(2(x−1)) − 3/(2(x+1))',
+      B: '3/(2(x−1)) − 5/(2(x+1))',
+      C: '5/(2(x−1)) + 3/(2(x+1))',
+      D: '3/(2(x+1)) + 5/(2(x−1))',
+    },
+    answer: 'C',
+    explanation: '4x+1 = A(x−1)+B(x+1). x=1: 5=2A→A=5/2. x=−1: −3=−2B→B=3/2. Result: (5/2)/(x−1) + (3/2)/(x+1).',
+    // Level:4, Taxonomy:Mathematical, Tag:partial-fractions, Triage:Return
+  },
+
+  /* Number Bases */
+  {
+    id: 84, subject: 'Mathematics',
+    text: 'Convert 0.1101₂ to a decimal.',
+    options: { A: '0.5625', B: '0.8125', C: '0.6875', D: '0.75' },
+    answer: 'B',
+    explanation: '0.1101₂ = 1×2⁻¹ + 1×2⁻² + 0×2⁻³ + 1×2⁻⁴ = 0.5 + 0.25 + 0 + 0.0625 = 0.8125.',
+    // Level:4, Taxonomy:Mathematical, Tag:number-bases-fraction, Triage:Pro-Ceiling
+  },
+
+  /* Variation */
+  {
+    id: 85, subject: 'Mathematics',
+    text: 'y is inversely proportional to x². When x=2, y=9. Find y when x=3.',
+    options: { A: '4', B: '6', C: '2', D: '3' },
+    answer: 'A',
+    explanation: 'y = k/x². 9 = k/4 → k = 36. y = 36/9 = 4.',
+    // Level:2, Taxonomy:Mathematical, Tag:variation-inverse, Triage:Sprint
+  },
+
+  /* Modular Arithmetic */
+  {
+    id: 86, subject: 'Mathematics',
+    text: 'Find the value of 5¹⁰⁰ (mod 7).',
+    options: { A: '1', B: '2', C: '4', D: '6' },
+    answer: 'B',
+    explanation: '5¹ mod7=5; 5²=25mod7=4; 5³=125mod7=6; 5⁴mod7=5×6=30mod7=2; 5⁵mod7=5×2=10mod7=3; 5⁶mod7=5×3=15mod7=1. Period=6. 100=6×16+4. 5¹⁰⁰≡5⁴≡2 (mod7).',
+    // Level:5, Taxonomy:Mathematical, Tag:modular-powers, Triage:Pro-Ceiling
+  },
+
+  /* Mensuration */
+  {
+    id: 87, subject: 'Mathematics',
+    text: 'A cone has base radius 6 cm and slant height 10 cm. Its curved surface area is (π = 22/7):',
+    options: { A: '188.6 cm²', B: '377.1 cm²', C: '113.1 cm²', D: '94.3 cm²' },
+    answer: 'A',
+    explanation: 'Curved SA = πrl = (22/7)×6×10 = 1320/7 ≈ 188.6 cm².',
+    // Level:2, Taxonomy:Mathematical, Tag:mensuration-cone, Triage:Sprint
+  },
+
+  /* Functions */
+  {
+    id: 88, subject: 'Mathematics',
+    text: 'If f(x) = (x+2)/(x−1), find f⁻¹(x).',
+    options: {
+      A: '(x+2)/(x−1)',
+      B: '(x−1)/(x+2)',
+      C: '(x+2)/(x+1)',
+      D: '(2+x)/(x−1)',
+    },
+    answer: 'A',
+    explanation: 'Let y=(x+2)/(x−1). Swap x and y: x=(y+2)/(y−1). x(y−1)=y+2. xy−x=y+2. xy−y=x+2. y(x−1)=x+2. y=(x+2)/(x−1). The function is its own inverse (self-inverse / involution).',
+    // Level:5, Taxonomy:Mathematical, Tag:inverse-function, Triage:Pro-Ceiling
+  },
+
+  /* Inequality */
+  {
+    id: 89, subject: 'Mathematics',
+    text: 'Find the integer values of x satisfying: −3 < 2x − 1 ≤ 5.',
+    options: { A: 'x ∈ {−1, 0, 1, 2, 3}', B: 'x ∈ {0, 1, 2, 3}', C: 'x ∈ {1, 2, 3}', D: 'x ∈ {−1, 0, 1, 2}' },
+    answer: 'B',
+    explanation: '−3<2x−1≤5 → −2<2x≤6 → −1<x≤3. Integers strictly greater than −1 and up to 3: {0,1,2,3}.',
+    // Level:3, Taxonomy:Mathematical, Tag:linear-inequality, Triage:Return
+  },
+
+  /* Circle Theorem */
+  {
+    id: 90, subject: 'Mathematics',
+    text: 'A chord PQ subtends an angle of 80° at the centre O of a circle. The angle subtended by PQ at the circumference is:',
+    options: { A: '160°', B: '40°', C: '80°', D: '100°' },
+    answer: 'B',
+    explanation: 'The angle at the centre is twice the angle at the circumference standing on the same arc. Angle at circumference = 80°/2 = 40°.',
+    // Level:2, Taxonomy:Mathematical, Tag:circle-theorems-centre-circumference, Triage:Sprint
+  },
+
+
+/* ─────────────────────────────────────────────────────────
+   PHYSICS  Q91 – Q125  (35 questions)
+───────────────────────────────────────────────────────── */
+
+  /* Mechanics */
+  {
+    id: 91, subject: 'Physics',
+    text: 'A car of mass 1200 kg decelerates from 30 m/s to rest in 6 s. The braking force is:',
+    options: { A: '3600 N', B: '6000 N', C: '7200 N', D: '2400 N' },
+    answer: 'B',
+    explanation: 'a = (v−u)/t = (0−30)/6 = −5 m/s². F = ma = 1200×5 = 6000 N (magnitude).',
+    // Level:2, Taxonomy:Mathematical, Tag:newton-second-law, Triage:Sprint
+  },
+  {
+    id: 92, subject: 'Physics',
+    text: 'A body is in equilibrium under three concurrent forces. This requires:',
+    options: {
+      A: 'all three forces to be equal in magnitude',
+      B: 'the vector sum of the three forces to be zero',
+      C: 'at least two of the three forces to be parallel',
+      D: 'the forces to act along the same straight line',
+    },
+    answer: 'B',
+    explanation: 'Equilibrium requires the resultant of all forces to be zero — their vector sum = 0. The forces need not be equal or parallel; they must close a vector triangle.',
+    // Level:2, Taxonomy:Abstract, Tag:equilibrium, Triage:Sprint
+  },
+  {
+    id: 93, subject: 'Physics',
+    text: 'A projectile launched at 45° achieves maximum range R. A second projectile is launched at 30° with the same initial speed. Its range is:',
+    options: { A: 'R', B: '(√3/2)R', C: 'R/2', D: '(√3/4)R' },
+    answer: 'B',
+    explanation: 'Range = u²sin2θ/g. At 45°: R = u²/g. At 30°: R\' = u²sin60°/g = u²(√3/2)/g = (√3/2)R.',
+    // Level:5, Taxonomy:Mathematical, Tag:projectile-range, Triage:Return
+  },
+  {
+    id: 94, subject: 'Physics',
+    text: 'The momentum of a 2 kg ball moving at 5 m/s collides with a 3 kg ball at rest. They stick together. The velocity after collision is:',
+    options: { A: '3 m/s', B: '2 m/s', C: '4 m/s', D: '1 m/s' },
+    answer: 'B',
+    explanation: 'Conservation of momentum: 2×5+3×0 = (2+3)v → 10 = 5v → v = 2 m/s.',
+    // Level:2, Taxonomy:Mathematical, Tag:momentum-collision, Triage:Sprint
+  },
+
+  /* Work, Energy & Power */
+  {
+    id: 95, subject: 'Physics',
+    text: 'A 500 W motor lifts a 100 kg load. How long does it take to raise it by 4 m? (g = 10 m/s²)',
+    options: { A: '4 s', B: '8 s', C: '2 s', D: '10 s' },
+    answer: 'B',
+    explanation: 'Work = mgh = 100×10×4 = 4000 J. Power = Work/t → t = 4000/500 = 8 s.',
+    // Level:2, Taxonomy:Mathematical, Tag:power, Triage:Sprint
+  },
+  {
+    id: 96, subject: 'Physics',
+    text: 'A body of mass 5 kg is raised to a height of 10 m. Its gain in potential energy is: (g = 10 m/s²)',
+    options: { A: '50 J', B: '500 J', C: '5000 J', D: '100 J' },
+    answer: 'B',
+    explanation: 'PE = mgh = 5×10×10 = 500 J.',
+    // Level:1, Taxonomy:Mathematical, Tag:potential-energy, Triage:Sprint
+  },
+
+  /* Waves */
+  {
+    id: 97, subject: 'Physics',
+    text: 'A wave has frequency 400 Hz and wavelength 0.8 m. Its speed is:',
+    options: { A: '500 m/s', B: '320 m/s', C: '480 m/s', D: '400 m/s' },
+    answer: 'B',
+    explanation: 'v = fλ = 400×0.8 = 320 m/s.',
+    // Level:1, Taxonomy:Mathematical, Tag:wave-speed, Triage:Sprint
+  },
+  {
+    id: 98, subject: 'Physics',
+    text: 'A closed pipe produces its fundamental note at frequency f. The same pipe opened at both ends would produce a fundamental frequency of:',
+    options: { A: 'f/2', B: 'f', C: '2f', D: '4f' },
+    answer: 'C',
+    explanation: 'Closed pipe fundamental: f = v/4L. Open pipe fundamental: f = v/2L. Opening both ends doubles the fundamental frequency to 2f.',
+    // Level:4, Taxonomy:Abstract, Tag:pipes-resonance, Triage:Return
+  },
+  {
+    id: 99, subject: 'Physics',
+    text: 'Which of the following waves CANNOT be polarised?',
+    options: { A: 'light waves', B: 'radio waves', C: 'sound waves', D: 'microwaves' },
+    answer: 'C',
+    explanation: 'Polarisation is a property of transverse waves — it restricts the plane of vibration. Sound waves are longitudinal (particles vibrate along the direction of travel) and cannot be polarised.',
+    // Level:3, Taxonomy:Abstract, Tag:polarisation, Triage:Return
+  },
+
+  /* Light & Optics */
+  {
+    id: 100, subject: 'Physics',
+    text: 'The image formed in a plane mirror is:',
+    options: {
+      A: 'real, inverted, and the same size as the object',
+      B: 'virtual, upright, and the same size as the object',
+      C: 'virtual, inverted, and magnified beyond the mirror',
+      D: 'real, upright, and diminished behind the mirror',
+    },
+    answer: 'B',
+    explanation: 'A plane mirror always forms a virtual, upright, laterally inverted image the same size as the object, located as far behind the mirror as the object is in front.',
+    // Level:1, Taxonomy:Abstract, Tag:plane-mirror, Triage:Sprint
+  },
+  {
+    id: 101, subject: 'Physics',
+    text: 'Light passes from water (n=1.33) into air (n=1). For angles of incidence above the critical angle, what occurs?',
+    options: {
+      A: 'the light refracts toward the normal and passes through',
+      B: 'the light is totally internally reflected back into the water',
+      C: 'the light is partially absorbed and partially transmitted',
+      D: 'the light slows down and becomes less intense',
+    },
+    answer: 'B',
+    explanation: 'Total internal reflection occurs when light travels from a denser to a less dense medium at an angle at or above the critical angle. All light reflects back into the denser medium — none is transmitted.',
+    // Level:2, Taxonomy:Abstract, Tag:total-internal-reflection, Triage:Sprint
+  },
+  {
+    id: 102, subject: 'Physics',
+    text: 'A concave mirror of focal length 15 cm has an object placed 45 cm from the pole. The image distance is:',
+    options: { A: '22.5 cm', B: '30 cm', C: '45 cm', D: '15 cm' },
+    answer: 'A',
+    explanation: '1/f = 1/v + 1/u (real-positive). 1/15 = 1/v + 1/45. 1/v = 1/15−1/45 = 3/45−1/45 = 2/45. v = 22.5 cm.',
+    // Level:3, Taxonomy:Mathematical, Tag:mirror-formula, Triage:Return
+  },
+
+  /* Heat */
+  {
+    id: 103, subject: 'Physics',
+    text: 'When a substance is at its melting point and heat is still being supplied, its temperature:',
+    options: {
+      A: 'rises rapidly as the substance melts',
+      B: 'remains constant while latent heat of fusion is absorbed',
+      C: 'falls briefly before rising again after melting',
+      D: 'rises at half the normal rate during phase change',
+    },
+    answer: 'B',
+    explanation: 'During a phase change, all supplied energy goes into breaking intermolecular bonds (latent heat) — none goes into raising kinetic energy. Temperature remains constant until the phase change is complete.',
+    // Level:2, Taxonomy:Abstract, Tag:latent-heat, Triage:Sprint
+  },
+  {
+    id: 104, subject: 'Physics',
+    text: 'The specific latent heat of vaporisation of a liquid is always greater than its specific latent heat of fusion because:',
+    options: {
+      A: 'more heat is needed to break all molecular bonds than to partially weaken them',
+      B: 'evaporation occurs at higher temperatures than melting',
+      C: 'gases have greater density than liquids, requiring more energy',
+      D: 'the latent heat of fusion does not involve molecular separation',
+    },
+    answer: 'A',
+    explanation: 'Melting only partially disrupts intermolecular order — molecules stay close. Vaporisation requires complete separation against intermolecular forces AND expansion against atmospheric pressure. Far more energy is needed.',
+    // Level:4, Taxonomy:Abstract, Tag:latent-heat-comparison, Triage:Return
+  },
+
+  /* Electricity */
+  {
+    id: 105, subject: 'Physics',
+    text: 'Three 6 Ω resistors are connected in parallel. The equivalent resistance is:',
+    options: { A: '18 Ω', B: '6 Ω', C: '3 Ω', D: '2 Ω' },
+    answer: 'D',
+    explanation: '1/R = 1/6+1/6+1/6 = 3/6 = 1/2. R = 2 Ω.',
+    // Level:2, Taxonomy:Mathematical, Tag:parallel-resistance, Triage:Sprint
+  },
+  {
+    id: 106, subject: 'Physics',
+    text: 'A charge of 60 C flows past a point in 12 s. The current is:',
+    options: { A: '720 A', B: '5 A', C: '0.2 A', D: '72 A' },
+    answer: 'B',
+    explanation: 'I = Q/t = 60/12 = 5 A.',
+    // Level:1, Taxonomy:Mathematical, Tag:current-charge, Triage:Sprint
+  },
+  {
+    id: 107, subject: 'Physics',
+    text: 'A cell with EMF 9 V and internal resistance 1 Ω is connected to a 2 Ω external resistor. The terminal voltage is:',
+    options: { A: '9 V', B: '3 V', C: '6 V', D: '4.5 V' },
+    answer: 'C',
+    explanation: 'I = EMF/(R+r) = 9/3 = 3 A. V_terminal = EMF−Ir = 9−3(1) = 6 V.',
+    // Level:3, Taxonomy:Mathematical, Tag:internal-resistance, Triage:Return
+  },
+  {
+    id: 108, subject: 'Physics',
+    text: 'The energy dissipated in a 10 Ω resistor carrying 2 A for 30 s is:',
+    options: { A: '600 J', B: '1200 J', C: '6000 J', D: '300 J' },
+    answer: 'B',
+    explanation: 'E = I²Rt = 4×10×30 = 1200 J.',
+    // Level:2, Taxonomy:Mathematical, Tag:electrical-energy, Triage:Sprint
+  },
+
+  /* Electromagnetism */
+  {
+    id: 109, subject: 'Physics',
+    text: 'A step-down transformer has 2000 primary turns and 100 secondary turns. With a 240 V primary input, the secondary voltage is:',
+    options: { A: '4800 V', B: '24 V', C: '12 V', D: '120 V' },
+    answer: 'C',
+    explanation: 'Vs = Vp × (Ns/Np) = 240 × (100/2000) = 240 × 0.05 = 12 V.',
+    // Level:2, Taxonomy:Mathematical, Tag:transformer, Triage:Sprint
+  },
+  {
+    id: 110, subject: 'Physics',
+    text: 'Electromagnetic induction occurs when:',
+    options: {
+      A: 'a conductor carries a steady current in a uniform magnetic field',
+      B: 'the magnetic flux through a conductor loop changes with time',
+      C: 'two parallel wires carry currents in the same direction',
+      D: 'a charged particle enters a region of uniform electric field',
+    },
+    answer: 'B',
+    explanation: 'Faraday\'s law: an EMF is induced in a circuit whenever the magnetic flux through it changes with time. A steady flux — however large — produces no EMF.',
+    // Level:2, Taxonomy:Abstract, Tag:electromagnetic-induction, Triage:Sprint
+  },
+
+  /* Modern Physics */
+  {
+    id: 111, subject: 'Physics',
+    text: 'In the photoelectric effect, increasing the FREQUENCY of incident light (above threshold) will:',
+    options: {
+      A: 'increase the number of electrons emitted per second',
+      B: 'increase the maximum kinetic energy of emitted electrons',
+      C: 'decrease the work function of the metal surface',
+      D: 'have no effect once the threshold frequency is exceeded',
+    },
+    answer: 'B',
+    explanation: 'KE_max = hf − φ. Increasing frequency increases KE_max directly. Intensity (not frequency) controls the number of emitted electrons.',
+    // Level:3, Taxonomy:Abstract, Tag:photoelectric-frequency, Triage:Return
+  },
+  {
+    id: 112, subject: 'Physics',
+    text: 'Which particle has the greatest penetrating power?',
+    options: { A: 'alpha particle', B: 'beta particle', C: 'gamma ray', D: 'neutron' },
+    answer: 'C',
+    explanation: 'Penetrating power order: α (least) < β < γ (greatest for radiation). Gamma rays are high-energy photons that can penetrate several centimetres of lead. Alpha particles are stopped by a sheet of paper.',
+    // Level:1, Taxonomy:Administrative, Tag:radioactivity-penetration, Triage:Sprint
+  },
+  {
+    id: 113, subject: 'Physics',
+    text: 'An element has atomic number 19 and mass number 39. Its nucleus contains:',
+    options: {
+      A: '19 protons and 39 neutrons',
+      B: '19 protons and 20 neutrons',
+      C: '20 protons and 19 neutrons',
+      D: '39 protons and 19 neutrons',
+    },
+    answer: 'B',
+    explanation: 'Atomic number = protons = 19. Neutrons = mass number − atomic number = 39−19 = 20.',
+    // Level:1, Taxonomy:Administrative, Tag:nuclear-composition, Triage:Sprint
+  },
+
+  /* Pressure & Fluids */
+  {
+    id: 114, subject: 'Physics',
+    text: 'An object floats in water with ⅔ of its volume submerged. The density of the object is:',
+    options: { A: '1500 kg/m³', B: '667 kg/m³', C: '1333 kg/m³', D: '333 kg/m³' },
+    answer: 'B',
+    explanation: 'For floating: weight = upthrust. ρ_obj × V × g = ρ_water × (⅔V) × g. ρ_obj = (⅔) × 1000 = 667 kg/m³.',
+    // Level:4, Taxonomy:Mathematical, Tag:floating-density, Triage:Return
+  },
+  {
+    id: 115, subject: 'Physics',
+    text: 'Bernoulli\'s principle states that in a flowing fluid, regions of higher velocity have:',
+    options: {
+      A: 'higher pressure and higher temperature throughout',
+      B: 'lower pressure and the same temperature',
+      C: 'lower pressure, explaining lift on aerofoils and the Venturi effect',
+      D: 'higher pressure, which drives the fluid through narrow constrictions',
+    },
+    answer: 'C',
+    explanation: 'Bernoulli: as fluid speed increases, pressure decreases (conservation of energy in flow). This explains aerofoil lift and the Venturi meter — both rely on pressure reduction in higher-velocity regions.',
+    // Level:3, Taxonomy:Abstract, Tag:bernoulli, Triage:Return
+  },
+
+  /* Thermal Properties */
+  {
+    id: 116, subject: 'Physics',
+    text: 'A thermometer uses mercury because mercury:',
+    options: {
+      A: 'is transparent and allows readings from any angle',
+      B: 'has low thermal conductivity and heats slowly',
+      C: 'expands uniformly, has high density, and is opaque for visibility',
+      D: 'has a very high boiling point and does not freeze at room temperature',
+    },
+    answer: 'C',
+    explanation: 'Mercury is chosen for its uniform thermal expansion, high density (so a small mass occupies a readable column), good visibility due to opacity, and its liquid range of −39°C to 357°C covering most measurement needs.',
+    // Level:3, Taxonomy:Administrative, Tag:thermometry-mercury, Triage:Return
+  },
+
+  /* Oscillations */
+  {
+    id: 117, subject: 'Physics',
+    text: 'A mass on a spring undergoes simple harmonic motion. At maximum displacement, its:',
+    options: {
+      A: 'velocity is maximum and acceleration is zero',
+      B: 'velocity is zero and acceleration is maximum',
+      C: 'both velocity and acceleration are maximum simultaneously',
+      D: 'both velocity and acceleration are zero simultaneously',
+    },
+    answer: 'B',
+    explanation: 'In SHM, velocity is zero at maximum displacement (momentarily at rest) and restoring force — hence acceleration — is at its maximum, directed back toward equilibrium.',
+    // Level:3, Taxonomy:Abstract, Tag:SHM-displacement, Triage:Return
+  },
+
+  /* Measurements */
+  {
+    id: 118, subject: 'Physics',
+    text: 'The least count of a micrometer screw gauge is:',
+    options: { A: '0.1 mm', B: '0.01 mm', C: '1 mm', D: '0.001 mm' },
+    answer: 'B',
+    explanation: 'A standard micrometer screw gauge has a least count of 0.01 mm (10 micrometres). The thimble scale divides each 0.5 mm pitch into 50 divisions: 0.5/50 = 0.01 mm.',
+    // Level:2, Taxonomy:Administrative, Tag:instruments-micrometer, Triage:Sprint
+  },
+
+  /* Circular Motion */
+  {
+    id: 119, subject: 'Physics',
+    text: 'A 0.5 kg mass moves in a circle of radius 2 m at 4 m/s. The centripetal force is:',
+    options: { A: '2 N', B: '4 N', C: '8 N', D: '16 N' },
+    answer: 'B',
+    explanation: 'F = mv²/r = 0.5×16/2 = 0.5×8 = 4 N.',
+    // Level:2, Taxonomy:Mathematical, Tag:centripetal-force, Triage:Sprint
+  },
+
+  /* Gravitational Field */
+  {
+    id: 120, subject: 'Physics',
+    text: 'A satellite orbits Earth in a circular orbit. As the orbital radius increases, the orbital speed:',
+    options: {
+      A: 'increases because the satellite must travel a greater distance',
+      B: 'decreases because gravitational force weakens with distance',
+      C: 'remains constant regardless of orbital radius',
+      D: 'increases only if the satellite\'s mass also increases',
+    },
+    answer: 'B',
+    explanation: 'Orbital speed v = √(GM/r). As r increases, v decreases. Higher orbits are slower — a result of the inverse relationship between gravitational force and distance.',
+    // Level:4, Taxonomy:Abstract, Tag:orbital-speed, Triage:Return
+  },
+
+  /* Surface Tension */
+  {
+    id: 121, subject: 'Physics',
+    text: 'A needle floats on water despite being denser than water. This is due to:',
+    options: {
+      A: 'Archimedes\' principle — the needle displaces enough water to float',
+      B: 'surface tension — the water surface acts like a stretched elastic membrane',
+      C: 'viscosity — the thick surface layer of water supports the needle',
+      D: 'capillarity — water rises around the needle to provide upward force',
+    },
+    answer: 'B',
+    explanation: 'Surface tension arises from cohesive forces between water molecules at the surface. A small, light object placed carefully can be supported by this surface "membrane" even if denser than water.',
+    // Level:3, Taxonomy:Abstract, Tag:surface-tension, Triage:Sprint
+  },
+
+  /* Optics — Dispersion */
+  {
+    id: 122, subject: 'Physics',
+    text: 'White light is dispersed by a prism because:',
+    options: {
+      A: 'different wavelengths of light travel at different speeds in the prism material',
+      B: 'the prism absorbs some wavelengths and reflects others',
+      C: 'white light contains both transverse and longitudinal components',
+      D: 'the angle of incidence varies for each colour of light',
+    },
+    answer: 'A',
+    explanation: 'Dispersion occurs because the refractive index of glass varies with wavelength — violet light slows more and bends more than red light. This is called chromatic dispersion.',
+    // Level:3, Taxonomy:Abstract, Tag:dispersion, Triage:Sprint
+  },
+
+  /* Capacitance */
+  {
+    id: 123, subject: 'Physics',
+    text: 'Two capacitors of 4 μF and 6 μF are connected in series. The equivalent capacitance is:',
+    options: { A: '10 μF', B: '2.4 μF', C: '1.67 μF', D: '12 μF' },
+    answer: 'B',
+    explanation: '1/C = 1/4+1/6 = 3/12+2/12 = 5/12. C = 12/5 = 2.4 μF.',
+    // Level:3, Taxonomy:Mathematical, Tag:capacitors-series, Triage:Return
+  },
+
+  /* Electromagnetic Spectrum */
+  {
+    id: 124, subject: 'Physics',
+    text: 'Infrared radiation is used in television remote controls primarily because:',
+    options: {
+      A: 'infrared travels faster than visible light and reduces delay',
+      B: 'infrared can pass through walls unlike visible light',
+      C: 'infrared is not visible and does not interfere with the viewing experience',
+      D: 'infrared carries more energy per photon than radio waves do',
+    },
+    answer: 'C',
+    explanation: 'Infrared is used in remotes because it is invisible (does not distract) and carries enough energy at short range. It does NOT pass through walls — visible light travels faster than IR only in the sense that all EM waves travel at c in vacuum.',
+    // Level:3, Taxonomy:Pragmatic, Tag:EM-spectrum-applications, Triage:Return
+  },
+
+  /* Dynamics — Rotational */
+  {
+    id: 125, subject: 'Physics',
+    text: 'A wheel initially at rest reaches an angular velocity of 20 rad/s in 5 s under constant angular acceleration. The angular acceleration is:',
+    options: { A: '100 rad/s²', B: '4 rad/s²', C: '15 rad/s²', D: '25 rad/s²' },
+    answer: 'B',
+    explanation: 'α = Δω/t = (20−0)/5 = 4 rad/s².',
+    // Level:2, Taxonomy:Mathematical, Tag:rotational-motion, Triage:Sprint
+  },
+
+
+/* ─────────────────────────────────────────────────────────
+   CHEMISTRY  Q126 – Q160  (35 questions)
+───────────────────────────────────────────────────────── */
+
+  /* Mole Concept */
+  {
+    id: 126, subject: 'Chemistry',
+    text: 'How many moles of atoms are in 27 g of aluminium? (Al = 27)',
+    options: { A: '0.5 mol', B: '2 mol', C: '1 mol', D: '27 mol' },
+    answer: 'C',
+    explanation: 'Moles = mass/Mr = 27/27 = 1 mol.',
+    // Level:1, Taxonomy:Mathematical, Tag:mole-mass, Triage:Sprint
+  },
+  {
+    id: 127, subject: 'Chemistry',
+    text: 'What is the number of molecules in 0.5 mol of CO₂? (Avogadro = 6×10²³)',
+    options: { A: '3×10²³', B: '6×10²³', C: '1.2×10²⁴', D: '1.5×10²³' },
+    answer: 'A',
+    explanation: 'Molecules = moles × Avogadro = 0.5 × 6×10²³ = 3×10²³.',
+    // Level:2, Taxonomy:Mathematical, Tag:avogadro, Triage:Sprint
+  },
+  {
+    id: 128, subject: 'Chemistry',
+    text: 'Limiting reagent: 3 g of H₂ and 32 g of O₂ react to form water. (H=1, O=16). Which reagent is in excess?',
+    options: { A: 'neither — they react completely', B: 'H₂ is in excess', C: 'O₂ is in excess', D: 'both are in excess' },
+    answer: 'C',
+    explanation: '2H₂ + O₂ → 2H₂O. Moles H₂ = 3/2 = 1.5 mol. Moles O₂ = 32/32 = 1 mol. Ratio needed: 2:1 → 1.5 mol H₂ needs 0.75 mol O₂. Available O₂ = 1 mol. O₂ is in excess (0.25 mol unused). H₂ is the limiting reagent.',
+    // Level:4, Taxonomy:Mathematical, Tag:limiting-reagent, Triage:Return
+  },
+
+  /* Gas Laws */
+  {
+    id: 129, subject: 'Chemistry',
+    text: 'A gas at 300 K occupies 10 L. At constant pressure, what volume does it occupy at 450 K?',
+    options: { A: '6.67 L', B: '15 L', C: '20 L', D: '13.3 L' },
+    answer: 'B',
+    explanation: 'Charles\' Law: V₁/T₁ = V₂/T₂. V₂ = 10×450/300 = 15 L.',
+    // Level:2, Taxonomy:Mathematical, Tag:charles-law, Triage:Sprint
+  },
+
+  /* Atomic Structure */
+  {
+    id: 130, subject: 'Chemistry',
+    text: 'The electronic configuration of Cu (Z=29) is:',
+    options: {
+      A: '[Ar] 3d⁹ 4s²',
+      B: '[Ar] 3d¹⁰ 4s¹',
+      C: '[Ar] 3d¹⁰ 4s⁰',
+      D: '[Ar] 3d⁸ 4s²',
+    },
+    answer: 'B',
+    explanation: 'Cu is [Ar]3d¹⁰4s¹ — not the expected 3d⁹4s². A fully-filled 3d subshell (3d¹⁰) is extra stable, so one 4s electron is promoted to 3d.',
+    // Level:4, Taxonomy:Abstract, Tag:electron-config-exception-Cu, Triage:Return
+  },
+
+  /* Periodicity */
+  {
+    id: 131, subject: 'Chemistry',
+    text: 'Across Period 3 from Na to Cl, atomic radius generally:',
+    options: {
+      A: 'increases as more electrons are added to the outer shell',
+      B: 'decreases as increasing nuclear charge pulls electrons closer',
+      C: 'remains constant since all atoms are in the same period',
+      D: 'increases then decreases at the transition metals',
+    },
+    answer: 'B',
+    explanation: 'Across a period, nuclear charge increases while electrons are added to the same shell. The increased attraction pulls the electron cloud inward — atomic radius decreases.',
+    // Level:2, Taxonomy:Abstract, Tag:atomic-radius, Triage:Sprint
+  },
+
+  /* Chemical Bonding */
+  {
+    id: 132, subject: 'Chemistry',
+    text: 'The bond angle in water (H₂O) is approximately 104.5°, which is less than the tetrahedral angle because:',
+    options: {
+      A: 'the H−O−H bond is weaker than a standard covalent bond',
+      B: 'two lone pairs occupy more space than bonding pairs and compress the bond angle',
+      C: 'oxygen is more electronegative than hydrogen, pulling bonds inward',
+      D: 'the molecular weight of water prevents a full tetrahedral arrangement',
+    },
+    answer: 'B',
+    explanation: 'VSEPR: lone pairs repel more strongly than bonding pairs. O has 2 lone pairs and 2 bonding pairs. The lone-pair/lone-pair and lone-pair/bond-pair repulsions compress the H−O−H angle below 109.5°.',
+    // Level:3, Taxonomy:Abstract, Tag:VSEPR-water, Triage:Return
+  },
+  {
+    id: 133, subject: 'Chemistry',
+    text: 'Which property of water is responsible for its unusually high boiling point relative to its molar mass?',
+    options: {
+      A: 'covalent bonding between hydrogen and oxygen atoms',
+      B: 'the polar nature of the O−H bond causing permanent dipole interactions',
+      C: 'extensive intermolecular hydrogen bonding between water molecules',
+      D: 'the bent molecular shape creating van der Waals forces',
+    },
+    answer: 'C',
+    explanation: 'Hydrogen bonding in water — each molecule can form up to 4 H-bonds — creates an unusually high boiling point (100°C) compared to other group 16 hydrides like H₂S (−60°C).',
+    // Level:3, Taxonomy:Abstract, Tag:hydrogen-bonding, Triage:Return
+  },
+
+  /* Electrolysis */
+  {
+    id: 134, subject: 'Chemistry',
+    text: 'In electrolysis, oxidation occurs at the:',
+    options: {
+      A: 'cathode, where cations are reduced',
+      B: 'anode, where anions lose electrons',
+      C: 'cathode, where anions are oxidised',
+      D: 'anode, where cations gain electrons',
+    },
+    answer: 'B',
+    explanation: 'OIL RIG: Oxidation Is Loss (of electrons), Reduction Is Gain. Anode = oxidation (anions migrate here and lose electrons). Cathode = reduction (cations gain electrons here).',
+    // Level:2, Taxonomy:Abstract, Tag:electrolysis-electrode-reactions, Triage:Sprint
+  },
+  {
+    id: 135, subject: 'Chemistry',
+    text: 'A current of 5 A is passed through molten NaCl for 30 minutes. Mass of Na deposited: (Na=23, F=96500)',
+    options: { A: '2.15 g', B: '4.30 g', C: '1.07 g', D: '8.60 g' },
+    answer: 'A',
+    explanation: 'Q = It = 5×1800 = 9000 C. Moles e⁻ = 9000/96500 = 0.0933. Na⁺+e⁻→Na, so n=1; moles Na = 0.0933. Mass = 0.0933×23 = 2.15 g.',
+    // Level:4, Taxonomy:Mathematical, Tag:electrolysis-faraday, Triage:Return
+  },
+
+  /* Equilibrium */
+  {
+    id: 136, subject: 'Chemistry',
+    text: 'Adding an inert gas to an equilibrium mixture at CONSTANT VOLUME has what effect?',
+    options: {
+      A: 'shifts the equilibrium toward fewer moles of gas',
+      B: 'shifts the equilibrium toward more moles of gas',
+      C: 'does not affect the equilibrium position',
+      D: 'increases the rate of the forward reaction only',
+    },
+    answer: 'C',
+    explanation: 'At constant volume, adding an inert gas does not change the partial pressures of the reacting gases — mole fractions and concentrations are unchanged. Equilibrium position does not shift.',
+    // Level:4, Taxonomy:Logical, Tag:equilibrium-inert-gas, Triage:Return
+  },
+  {
+    id: 137, subject: 'Chemistry',
+    text: 'For the reaction PCl₃(g) + Cl₂(g) ⇌ PCl₅(g), the Kc expression is:',
+    options: {
+      A: 'Kc = [PCl₃][Cl₂]/[PCl₅]',
+      B: 'Kc = [PCl₅]/([PCl₃][Cl₂])',
+      C: 'Kc = [PCl₅]²/([PCl₃]²[Cl₂])',
+      D: 'Kc = [PCl₅]/[PCl₃]',
+    },
+    answer: 'B',
+    explanation: 'Kc = [products]/[reactants] with stoichiometric powers. All coefficients are 1: Kc = [PCl₅]/([PCl₃][Cl₂]).',
+    // Level:2, Taxonomy:Mathematical, Tag:equilibrium-Kc, Triage:Sprint
+  },
+
+  /* Acids & Bases */
+  {
+    id: 138, subject: 'Chemistry',
+    text: 'The pH of a 0.001 mol/L NaOH solution is:',
+    options: { A: '3', B: '11', C: '13', D: '9' },
+    answer: 'B',
+    explanation: 'NaOH fully dissociates: [OH⁻] = 0.001 = 10⁻³. pOH = 3. pH = 14−pOH = 11.',
+    // Level:3, Taxonomy:Mathematical, Tag:pH-strong-base, Triage:Return
+  },
+
+  /* Organic Chemistry */
+  {
+    id: 139, subject: 'Chemistry',
+    text: 'The IUPAC name of CH₃−C(=O)−CH₂−CH₃ is:',
+    options: { A: 'butanal', B: 'butanone', C: 'butan-2-one', D: 'butan-3-one' },
+    answer: 'C',
+    explanation: 'Four-carbon chain with a ketone (C=O) on carbon 2: butan-2-one. The carbonyl carbon must receive the lowest possible locant. "Butanone" alone is acceptable but C is the complete IUPAC name.',
+    // Level:3, Taxonomy:Administrative, Tag:IUPAC-ketones, Triage:Return
+  },
+  {
+    id: 140, subject: 'Chemistry',
+    text: 'Which reagent converts an alkene to an alkane?',
+    options: {
+      A: 'Cl₂ in UV light',
+      B: 'H₂ in the presence of a Ni catalyst',
+      C: 'KMnO₄ in acidic solution',
+      D: 'Br₂ in CCl₄ solution',
+    },
+    answer: 'B',
+    explanation: 'Hydrogenation: alkene + H₂ → alkane (Ni catalyst, moderate temperature). Cl₂/UV is substitution for alkanes. KMnO₄ oxidises alkenes. Br₂/CCl₄ is addition across the double bond but gives a dihalide, not an alkane.',
+    // Level:3, Taxonomy:Administrative, Tag:organic-hydrogenation, Triage:Return
+  },
+  {
+    id: 141, subject: 'Chemistry',
+    text: 'The functional group −COOH is characteristic of:',
+    options: { A: 'alcohols', B: 'aldehydes', C: 'carboxylic acids', D: 'ketones' },
+    answer: 'C',
+    explanation: 'The carboxyl group (−COOH) defines carboxylic acids. Alcohols have −OH; aldehydes have −CHO (terminal C=O); ketones have a non-terminal C=O with no H on the carbonyl carbon.',
+    // Level:1, Taxonomy:Administrative, Tag:functional-groups, Triage:Sprint
+  },
+
+  /* Reaction Kinetics */
+  {
+    id: 142, subject: 'Chemistry',
+    text: 'The Maxwell-Boltzmann distribution shows that increasing temperature:',
+    options: {
+      A: 'shifts the peak of the curve to lower energies and makes it taller',
+      B: 'shifts the peak to higher energies, flattens the curve, and increases the proportion with energy ≥ Eₐ',
+      C: 'only increases the number of molecules above the activation energy threshold',
+      D: 'lowers the activation energy required for the reaction to proceed',
+    },
+    answer: 'B',
+    explanation: 'Higher T shifts the distribution rightward (higher average energy), flattens and broadens the curve (constant total area = total molecules), and dramatically increases the fraction of molecules with energy at or above Eₐ.',
+    // Level:5, Taxonomy:Abstract, Tag:maxwell-boltzmann, Triage:Return
+  },
+
+  /* Thermochemistry */
+  {
+    id: 143, subject: 'Chemistry',
+    text: 'Hess\'s Law states that the enthalpy change of a reaction:',
+    options: {
+      A: 'depends on the temperature at which the reaction is carried out',
+      B: 'is independent of the pathway taken between reactants and products',
+      C: 'is always negative for spontaneous reactions',
+      D: 'equals the sum of the bond energies of all bonds broken',
+    },
+    answer: 'B',
+    explanation: 'Hess\'s Law: ΔH is a state function — it depends only on initial and final states, not the route. This allows calculation of ΔH for reactions that cannot be measured directly.',
+    // Level:3, Taxonomy:Abstract, Tag:hess-law, Triage:Sprint
+  },
+
+  /* Electrochemistry */
+  {
+    id: 144, subject: 'Chemistry',
+    text: 'In a Daniel cell (Zn/ZnSO₄ || CuSO₄/Cu), electrons flow through the external circuit from:',
+    options: {
+      A: 'copper to zinc, because zinc is the cathode',
+      B: 'zinc to copper, because zinc is the anode and is oxidised',
+      C: 'copper to zinc through the salt bridge only',
+      D: 'both electrodes simultaneously toward the salt bridge',
+    },
+    answer: 'B',
+    explanation: 'Zinc is higher in the activity series — it is oxidised (loses electrons) at the anode. Electrons flow through the external wire from Zn (anode) to Cu (cathode), where Cu²⁺ is reduced.',
+    // Level:3, Taxonomy:Abstract, Tag:electrochemical-cell, Triage:Return
+  },
+
+  /* Water Chemistry */
+  {
+    id: 145, subject: 'Chemistry',
+    text: 'Temporary hardness in water is caused by dissolved:',
+    options: {
+      A: 'calcium sulphate and magnesium sulphate',
+      B: 'calcium chloride and sodium chloride',
+      C: 'calcium hydrogen carbonate and magnesium hydrogen carbonate',
+      D: 'calcium carbonate and magnesium carbonate',
+    },
+    answer: 'C',
+    explanation: 'Temporary hardness is caused by dissolved Ca(HCO₃)₂ and Mg(HCO₃)₂ — removed by boiling (they decompose to insoluble carbonates). Permanent hardness (sulphates, chlorides) cannot be removed by boiling.',
+    // Level:3, Taxonomy:Administrative, Tag:water-hardness-types, Triage:Return
+  },
+
+  /* Environmental Chemistry */
+  {
+    id: 146, subject: 'Chemistry',
+    text: 'The major cause of acid rain is:',
+    options: {
+      A: 'CO₂ dissolving in rain to form carbonic acid',
+      B: 'SO₂ and NOₓ from combustion dissolving in rain to form H₂SO₄ and HNO₃',
+      C: 'ozone reacting with water vapour in the upper atmosphere',
+      D: 'industrial chlorine emissions reacting with atmospheric moisture',
+    },
+    answer: 'B',
+    explanation: 'Acid rain results primarily from SO₂ (from fossil fuel combustion) and NOₓ (from vehicle engines and power plants) dissolving in atmospheric water to form H₂SO₄ and HNO₃. CO₂ produces weak carbonic acid — insufficient for acid rain.',
+    // Level:3, Taxonomy:Pragmatic, Tag:acid-rain, Triage:Return
+  },
+
+  /* Periodicity — Further */
+  {
+    id: 147, subject: 'Chemistry',
+    text: 'Which of the following oxides is amphoteric?',
+    options: { A: 'Na₂O', B: 'SO₃', C: 'Al₂O₃', D: 'MgO' },
+    answer: 'C',
+    explanation: 'Al₂O₃ is amphoteric — it reacts with both acids (Al₂O₃+H₂SO₄) and alkalis (Al₂O₃+NaOH). Na₂O and MgO are basic oxides; SO₃ is an acidic oxide.',
+    // Level:3, Taxonomy:Administrative, Tag:amphoteric-oxides, Triage:Return
+  },
+
+  /* Organic — Functional Group Reactions */
+  {
+    id: 148, subject: 'Chemistry',
+    text: 'Fehling\'s solution is used to distinguish between:',
+    options: {
+      A: 'alkanes and alkenes in organic mixtures',
+      B: 'aldehydes and ketones — only aldehydes give a positive result',
+      C: 'saturated and unsaturated fatty acids in food samples',
+      D: 'primary and secondary alcohols in aqueous solution',
+    },
+    answer: 'B',
+    explanation: 'Fehling\'s solution (deep blue Cu²⁺ complex) is reduced to brick-red Cu₂O by aldehydes (which are oxidised to carboxylic acids). Ketones do not reduce Fehling\'s — they give no colour change.',
+    // Level:3, Taxonomy:Administrative, Tag:fehling-test, Triage:Return
+  },
+
+  /* Radioactivity */
+  {
+    id: 149, subject: 'Chemistry',
+    text: 'A radioactive isotope has a half-life of 20 years. What percentage of the original sample remains after 60 years?',
+    options: { A: '25%', B: '12.5%', C: '6.25%', D: '33%' },
+    answer: 'B',
+    explanation: '60 years = 3 half-lives. Fraction remaining = (½)³ = 1/8 = 12.5%.',
+    // Level:2, Taxonomy:Mathematical, Tag:radioactivity-half-life, Triage:Sprint
+  },
+
+  /* Colligative Properties */
+  {
+    id: 150, subject: 'Chemistry',
+    text: 'Which solution has the LOWEST freezing point?',
+    options: {
+      A: '1 mol/L glucose in water',
+      B: '0.5 mol/L NaCl in water',
+      C: '1 mol/L NaCl in water',
+      D: '0.5 mol/L glucose in water',
+    },
+    answer: 'C',
+    explanation: 'Freezing point depression ∝ total moles of particles. 1 mol/L NaCl → 2 mol/L particles (Na⁺+Cl⁻). 1 mol/L glucose → 1 mol/L particles. 1 mol/L NaCl has the highest particle concentration — lowest freezing point.',
+    // Level:4, Taxonomy:Logical, Tag:colligative-freezing, Triage:Return
+  },
+
+  /* Organic — Petroleum */
+  {
+    id: 151, subject: 'Chemistry',
+    text: 'Fractional distillation of crude oil separates fractions based on differences in their:',
+    options: {
+      A: 'molecular mass and colour of the hydrocarbon chains',
+      B: 'boiling points, which depend on chain length and intermolecular forces',
+      C: 'chemical reactivity with acids and alkalis at high temperatures',
+      D: 'solubility in water at different pressures inside the fractionating column',
+    },
+    answer: 'B',
+    explanation: 'Longer hydrocarbon chains have stronger van der Waals forces and higher boiling points. Fractional distillation separates fractions by boiling point — shorter chains (gases, petrol) rise higher in the column; longer chains (diesel, bitumen) condense lower.',
+    // Level:3, Taxonomy:Pragmatic, Tag:fractional-distillation, Triage:Sprint
+  },
+
+  /* Salts */
+  {
+    id: 152, subject: 'Chemistry',
+    text: 'Which salt undergoes hydrolysis to produce an acidic solution?',
+    options: {
+      A: 'NaCl — formed from strong acid and strong base',
+      B: 'Na₂CO₃ — formed from strong base and weak acid',
+      C: 'NH₄Cl — formed from weak base and strong acid',
+      D: 'CH₃COONa — formed from weak acid and strong base',
+    },
+    answer: 'C',
+    explanation: 'NH₄Cl hydrolyses in water: NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺ — producing an acidic solution (pH < 7). Salts of weak base + strong acid are acidic. NaCl is neutral; Na₂CO₃ and CH₃COONa give alkaline solutions.',
+    // Level:4, Taxonomy:Logical, Tag:salt-hydrolysis, Triage:Return
+  },
+
+  /* Organic — Alcohols */
+  {
+    id: 153, subject: 'Chemistry',
+    text: 'Ethanol is oxidised to ethanoic acid in two steps. The intermediate compound is:',
+    options: { A: 'ethanal', B: 'ethene', C: 'ethanoate', D: 'methanol' },
+    answer: 'A',
+    explanation: 'Oxidation pathway: ethanol (CH₃CH₂OH) → ethanal (CH₃CHO) → ethanoic acid (CH₃COOH). The aldehyde is the intermediate between the primary alcohol and the carboxylic acid.',
+    // Level:3, Taxonomy:Administrative, Tag:alcohol-oxidation, Triage:Return
+  },
+
+  /* Industrial Chemistry */
+  {
+    id: 154, subject: 'Chemistry',
+    text: 'In the Haber process, the optimum conditions of 450°C and 200 atm are a compromise because:',
+    options: {
+      A: 'higher temperatures increase yield but lower pressure reduces equipment cost',
+      B: 'lower temperatures favour yield but are too slow; higher pressure favours yield but is too costly',
+      C: 'the catalyst only functions at exactly 450°C and 200 atm and not at other conditions',
+      D: 'the reaction is endothermic, so lower temperatures shift equilibrium toward products',
+    },
+    answer: 'B',
+    explanation: 'Thermodynamics favours low temperature (exothermic reaction) and high pressure (fewer moles of gas on right). But at very low temperatures the rate is too slow. High pressure increases yield but is expensive and hazardous. The industrial compromise balances rate and yield economically.',
+    // Level:5, Taxonomy:Logical, Tag:haber-process-conditions, Triage:Return
+  },
+
+  /* Redox */
+  {
+    id: 155, subject: 'Chemistry',
+    text: 'In the reaction: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O, permanganate ion is:',
+    options: {
+      A: 'oxidised — it gains electrons and its oxidation state increases',
+      B: 'reduced — it gains electrons and its oxidation state decreases',
+      C: 'oxidised — it loses electrons and acts as a reducing agent',
+      D: 'neither oxidised nor reduced — the electrons balance the charge only',
+    },
+    answer: 'B',
+    explanation: 'MnO₄⁻ gains 5 electrons (reduction). Mn goes from +7 (in MnO₄⁻) to +2 (in Mn²⁺) — oxidation state decreases. Permanganate is a strong oxidising agent (it is reduced while it oxidises others).',
+    // Level:3, Taxonomy:Logical, Tag:redox-permanganate, Triage:Return
+  },
+
+  /* Nuclear Chemistry */
+  {
+    id: 156, subject: 'Chemistry',
+    text: 'Which of the following correctly represents alpha decay of ²²⁶₈₈Ra?',
+    options: {
+      A: '²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He',
+      B: '²²⁶₈₈Ra → ²²²₈₇Fr + ⁴₁H',
+      C: '²²⁶₈₈Ra → ²²⁴₈₆Rn + ²₂He',
+      D: '²²⁶₈₈Ra → ²³⁰₉₀Th + ⁴₂He',
+    },
+    answer: 'A',
+    explanation: 'Alpha decay: lose ⁴₂He. Mass: 226−4=222 ✓. Atomic number: 88−2=86 (Radon, Rn) ✓. The equation balances in both mass number and atomic number.',
+    // Level:3, Taxonomy:Mathematical, Tag:nuclear-alpha-decay, Triage:Return
+  },
+
+  /* Separating Techniques */
+  {
+    id: 157, subject: 'Chemistry',
+    text: 'Paper chromatography separates components of a mixture based on differences in their:',
+    options: {
+      A: 'density and molecular mass in the stationary phase',
+      B: 'solubility in the solvent and affinity for the paper',
+      C: 'boiling points when the solvent front evaporates',
+      D: 'electrical charge when subjected to the mobile phase',
+    },
+    answer: 'B',
+    explanation: 'Chromatography separates on the basis of differential partitioning between the mobile phase (solvent) and stationary phase (paper). Components more soluble in the solvent travel further; those with higher affinity for the paper travel less.',
+    // Level:3, Taxonomy:Abstract, Tag:chromatography, Triage:Sprint
+  },
+
+  /* Organic — Polymers */
+  {
+    id: 158, subject: 'Chemistry',
+    text: 'Nylon is formed by the condensation of a diamine and a dicarboxylic acid. The small molecule eliminated in each step is:',
+    options: { A: 'CO₂', B: 'HCl', C: 'H₂O', D: 'NH₃' },
+    answer: 'C',
+    explanation: 'In condensation polymerisation of nylon (polyamide), the −NH₂ group of the diamine reacts with the −COOH group of the diacid, forming a −CO−NH− (amide) linkage and releasing water.',
+    // Level:2, Taxonomy:Administrative, Tag:condensation-polymer, Triage:Sprint
+  },
+
+  /* Transition Metals */
+  {
+    id: 159, subject: 'Chemistry',
+    text: 'Transition metals can form complex ions because they:',
+    options: {
+      A: 'have high melting points and good electrical conductivity',
+      B: 'possess vacant d orbitals that can accept lone pairs from ligands',
+      C: 'always exist in the +2 oxidation state in aqueous solution',
+      D: 'have the smallest atomic radii in the periodic table',
+    },
+    answer: 'B',
+    explanation: 'Complex ions form when ligands (molecules or ions with lone pairs) donate electron pairs into vacant d orbitals of transition metal ions. This is a Lewis acid-base interaction.',
+    // Level:4, Taxonomy:Abstract, Tag:transition-metals-complexes, Triage:Return
+  },
+
+  /* Organic — Isomerism */
+  {
+    id: 160, subject: 'Chemistry',
+    text: 'But-1-ene and but-2-ene are examples of:',
+    options: {
+      A: 'chain isomers — they differ in the arrangement of the carbon skeleton',
+      B: 'position isomers — they differ in the position of the double bond',
+      C: 'functional group isomers — one is an alkene and the other an alkyne',
+      D: 'optical isomers — they are non-superimposable mirror images',
+    },
+    answer: 'B',
+    explanation: 'Both are C₄H₈ with the same carbon chain. The only difference is the position of the C=C double bond: carbon 1 in but-1-ene vs carbon 2 in but-2-ene. This is positional isomerism.',
+    // Level:3, Taxonomy:Administrative, Tag:isomerism-positional, Triage:Sprint
+  },
+
+];
+
+</script>
+
+<!-- Fixed Header -->
+<header class="quiz-header">
+    <div class="quiz-header-container">
+
+        <div class="quiz-header-left">
+            <button class="btn-icon" id="menuBtn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="subject-info">
+                <div class="subject-name" id="subjectName">Science: MEPC v8</div>
+                <div class="subject-meta">Question <span id="currentQuestionNum">1</span> of <span id="totalQuestions">160</span></div>
+            </div>
+        </div>
+
+        <div class="quiz-timer-container" id="quizTimerContainer">
+            <div class="timer-progress-ring">
+                <svg viewBox="0 0 60 60">
+                    <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/>
+                    <circle id="timerProgressCircle" cx="30" cy="30" r="26" fill="none"
+                            stroke="var(--accent)" stroke-width="4"
+                            stroke-dasharray="163.36" stroke-dashoffset="0"
+                            transform="rotate(-90 30 30)" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="timer-icon"><i class="fas fa-clock"></i></div>
+            <div class="timer-display" id="timerDisplay">60:00</div>
+        </div>
+
+        <div class="quiz-header-right">
+            <button class="btn-icon" id="calculatorBtn" aria-label="Calculator">
+                <i class="fas fa-calculator"></i>
+            </button>
+            <button class="btn btn-sm btn-danger" id="submitBtn">Submit</button>
+        </div>
+    </div>
+</header>
+
+<div class="quiz-container">
+
+    <aside class="quiz-sidebar" id="quizSidebar">
+        <div class="sidebar-header">
+            <h3>Navigator</h3>
+            <button class="btn-icon btn-close-sidebar" id="closeSidebar" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-stats">
+            <div class="stat-item">
+                <div class="stat-value" id="answeredCount">0</div>
+                <div class="stat-label">Done</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="unansweredCount">160</div>
+                <div class="stat-label">Left</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="flaggedCount">0</div>
+                <div class="stat-label">Flagged</div>
+            </div>
+        </div>
+        <div class="question-palette" id="questionPalette"></div>
+        <div class="sidebar-legend">
+            <div class="legend-item"><span class="legend-dot current"></span> Current</div>
+            <div class="legend-item"><span class="legend-dot answered"></span> Answered</div>
+            <div class="legend-item"><span class="legend-dot flagged"></span> Flagged</div>
+            <div class="legend-item"><span class="legend-dot"></span> Unanswered</div>
+        </div>
+        <div style="padding:1rem;border-top:1px solid var(--border,#1e1e2e);margin-top:auto;">
+            <a href="science_clusters.html"
+               class="btn btn-secondary"
+               style="width:100%;text-align:center;text-decoration:none;display:block;"
+               onclick="return confirm('Leave quiz? Progress will be lost.')">
+                &#8592; Back
+            </a>
+        </div>
+    </aside>
+
+    <main class="quiz-main">
+
+        <!-- Passage panel — rendered by quiz-app.js when q.passage is set; invisible otherwise -->
+        <div class="passage-panel hidden" id="passagePanel">
+            <div class="passage-header">
+                <span class="passage-label"><i class="fas fa-book-open"></i> Read</span>
+                <span class="passage-title-text" id="passageTitle">Comprehension Passage</span>
+                <button class="btn-passage-toggle" id="passageToggleBtn">
+                    <i class="fas fa-compress-alt"></i> Hide Passage
+                </button>
+            </div>
+            <div class="passage-body" id="passageBody"></div>
+        </div>
+
+        <div class="question-card" id="questionCard">
+            <div class="question-header">
+                <div class="question-number">Question <span id="questionNumber">1</span></div>
+                <button class="btn-flag" id="flagBtn" aria-label="Flag">
+                    <i class="far fa-flag"></i> Flag
+                </button>
+            </div>
+            <div class="question-text" id="questionText">Loading...</div>
+            <div class="options-container" id="optionsContainer"></div>
+            <div class="question-explanation hidden" id="questionExplanation">
+                <div class="explanation-header"><i class="fas fa-lightbulb"></i> Explanation</div>
+                <div class="explanation-content" id="explanationContent"></div>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="btn btn-secondary" id="prevBtn" disabled>
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <button class="btn btn-secondary" id="clearBtn">
+                <i class="fas fa-eraser"></i> Clear
+            </button>
+            <button class="btn btn-primary" id="nextBtn">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </main>
+</div>
+
+<div class="mobile-palette-trigger" id="mobilePaletteBtn">
+    <i class="fas fa-th"></i> <span>Questions</span>
+</div>
+
+<!-- Submit Modal -->
+<div class="modal-overlay hidden" id="submitModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h3>Submit Test?</h3>
+            <button class="btn-icon" id="closeSubmitModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="submit-summary">
+                <div class="summary-item"><span class="summary-label">Total</span><span class="summary-value" id="modalTotalQuestions">160</span></div>
+                <div class="summary-item"><span class="summary-label">Answered</span><span class="summary-value answered-text" id="modalAnsweredCount">0</span></div>
+                <div class="summary-item"><span class="summary-label">Unanswered</span><span class="summary-value warning-text" id="modalUnansweredCount">160</span></div>
+                <div class="summary-item"><span class="summary-label">Time Left</span><span class="summary-value" id="modalTimeRemaining">60:00</span></div>
+            </div>
+            <div class="warning-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>You cannot change answers after submission.</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="cancelSubmitBtn">Cancel</button>
+            <button class="btn btn-danger" id="confirmSubmitBtn"><i class="fas fa-check"></i> Submit</button>
+        </div>
+    </div>
+</div>
+
+<!-- Time Up Modal -->
+<div class="modal-overlay hidden" id="timeUpModal">
+    <div class="modal">
+        <div class="modal-header"><h3>&#8987; Time's Up!</h3></div>
+        <div class="modal-body">
+            <p style="color:var(--muted);font-size:0.9rem;">Your time has run out. Answers recorded.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="viewResultsBtn">View Results</button>
+        </div>
+    </div>
+</div>
+
+<!-- Calculator Modal -->
+<div class="modal-overlay hidden" id="calculatorModal">
+    <div class="modal calculator-modal">
+        <div class="modal-header">
+            <h3>Calculator</h3>
+            <button class="btn-icon" id="closeCalculatorModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="calculator">
+                <input type="text" class="calculator-display" id="calcDisplay" value="0" readonly>
+                <div class="calculator-buttons">
+                    <button class="calc-btn" data-action="clear">C</button>
+                    <button class="calc-btn" data-action="delete">&#8592;</button>
+                    <button class="calc-btn" data-action="divide">&#247;</button>
+                    <button class="calc-btn" data-action="multiply">&#215;</button>
+                    <button class="calc-btn" data-value="7">7</button>
+                    <button class="calc-btn" data-value="8">8</button>
+                    <button class="calc-btn" data-value="9">9</button>
+                    <button class="calc-btn" data-action="subtract">&#8722;</button>
+                    <button class="calc-btn" data-value="4">4</button>
+                    <button class="calc-btn" data-value="5">5</button>
+                    <button class="calc-btn" data-value="6">6</button>
+                    <button class="calc-btn" data-action="add">+</button>
+                    <button class="calc-btn" data-value="1">1</button>
+                    <button class="calc-btn" data-value="2">2</button>
+                    <button class="calc-btn" data-value="3">3</button>
+                    <button class="calc-btn calc-equals" data-action="equals" style="grid-row:span 2">=</button>
+                    <button class="calc-btn" data-value="0" style="grid-column:span 2">0</button>
+                    <button class="calc-btn" data-value=".">.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="quiz-app.js"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PASSAGE PANEL DRIVER
+     quiz-app.js is untouched. This script drives the #passagePanel
+     that is already declared in the HTML above. It watches
+     #questionNumber (always updated by quiz-app.js on every render)
+     via MutationObserver, reads the current question straight from
+     the QUESTIONS array, and shows/hides the panel accordingly.
+     No fetch. No routing. HTML for HTML things.
+════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  const panel      = document.getElementById('passagePanel');
+  const titleEl    = document.getElementById('passageTitle');
+  const bodyEl     = document.getElementById('passageBody');
+  const toggleBtn  = document.getElementById('passageToggleBtn');
+  const qNumEl     = document.getElementById('questionNumber');
+
+  // Toggle collapse/expand (the button already exists in the HTML)
+  let collapsed = false;
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      collapsed = !collapsed;
+      bodyEl.style.display = collapsed ? 'none' : '';
+      toggleBtn.innerHTML  = collapsed
+        ? '<i class="fas fa-expand-alt"></i> Show Passage'
+        : '<i class="fas fa-compress-alt"></i> Hide Passage';
+    });
+  }
+
+  function syncPassage() {
+    const n = parseInt(qNumEl.textContent, 10);
+    if (!n || !Array.isArray(QUESTIONS)) return;
+
+    const q = QUESTIONS[n - 1];
+    if (q && q.passage) {
+      // Only rewrite DOM when the passage actually changes
+      const key = q.passage.slice(0, 40);
+      if (bodyEl.dataset.key !== key) {
+        bodyEl.dataset.key  = key;
+        titleEl.textContent = q.passageTitle || 'Comprehension Passage';
+        bodyEl.textContent  = q.passage;   // textContent — safe, no XSS
+        panel.scrollTop     = 0;
+        // Reset collapse state when a new passage appears
+        collapsed          = false;
+        bodyEl.style.display = '';
+        if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-compress-alt"></i> Hide Passage';
+      }
+      panel.classList.remove('hidden');
+    } else {
+      panel.classList.add('hidden');
+    }
+  }
+
+  // Fire on every question navigation (quiz-app.js always updates #questionNumber)
+  new MutationObserver(syncPassage).observe(qNumEl, {
+    childList: true, subtree: true, characterData: true
+  });
+  syncPassage(); // run once on load
+})();
+</script>
+
+
+</body>
+</html>
